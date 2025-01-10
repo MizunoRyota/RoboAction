@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EffekseerProject>
+  <Option>
+    <LanguageSelector>ja</LanguageSelector>
+  </Option>
+  <Recording>
+    <RecordingStartingFrame>23</RecordingStartingFrame>
+    <RecordingEndingFrame>23</RecordingEndingFrame>
+  </Recording>
+</EffekseerProject>
