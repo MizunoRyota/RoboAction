@@ -3,32 +3,56 @@
   "WorkspaceRootPath": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\Enemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Enemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\Enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\HitChecker.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:HitChecker.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\HitChecker.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:HitChecker.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\BeAttackedPlayerHit.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:BeAttackedPlayerHit.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\BeAttackedPlayerHit.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:BeAttackedPlayerHit.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\Enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\Enemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Enemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\EnemyAttackHitRangeChecker.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:EnemyAttackHitRangeChecker.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\EnemyAttackRangeChecker.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:EnemyAttackRangeChecker.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\Input.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -45,30 +69,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\Stage.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Stage.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\BeAttackedPlayerHit.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:BeAttackedPlayerHit.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\HitChecker.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:HitChecker.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\BeAttackedPlayerHit.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:BeAttackedPlayerHit.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\EnemyAttackHitRangeChecker.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:EnemyAttackHitRangeChecker.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\HitChecker.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:HitChecker.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\Skydome.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -128,7 +128,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -140,37 +140,160 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 4,
+              "Title": "HitChecker.h",
+              "DocumentMoniker": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\HitChecker.h",
+              "RelativeDocumentMoniker": "HitChecker.h",
+              "ToolTip": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\HitChecker.h",
+              "RelativeToolTip": "HitChecker.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-30T15:09:19.841Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Player.cpp",
+              "DocumentMoniker": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\Player.cpp",
+              "RelativeDocumentMoniker": "Player.cpp",
+              "ToolTip": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\Player.cpp",
+              "RelativeToolTip": "Player.cpp",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAEUAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-11T08:40:23.138Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "EnemyAttackRangeChecker.h",
+              "DocumentMoniker": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\EnemyAttackRangeChecker.h",
+              "RelativeDocumentMoniker": "EnemyAttackRangeChecker.h",
+              "ToolTip": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\EnemyAttackRangeChecker.h",
+              "RelativeToolTip": "EnemyAttackRangeChecker.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-11T09:28:51.446Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Player.h",
+              "DocumentMoniker": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\Player.h",
+              "RelativeDocumentMoniker": "Player.h",
+              "ToolTip": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\Player.h",
+              "RelativeToolTip": "Player.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-11T08:09:02.404Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "BeAttackedPlayerHit.h",
+              "DocumentMoniker": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\BeAttackedPlayerHit.h",
+              "RelativeDocumentMoniker": "BeAttackedPlayerHit.h",
+              "ToolTip": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\BeAttackedPlayerHit.h",
+              "RelativeToolTip": "BeAttackedPlayerHit.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-30T16:08:43.063Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BeAttackedPlayerHit.cpp",
+              "DocumentMoniker": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\BeAttackedPlayerHit.cpp",
+              "RelativeDocumentMoniker": "BeAttackedPlayerHit.cpp",
+              "ToolTip": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\BeAttackedPlayerHit.cpp",
+              "RelativeToolTip": "BeAttackedPlayerHit.cpp",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-30T16:08:59.542Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "EnemyAttackHitRangeChecker.cpp",
               "DocumentMoniker": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\EnemyAttackHitRangeChecker.cpp",
               "RelativeDocumentMoniker": "EnemyAttackHitRangeChecker.cpp",
               "ToolTip": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\EnemyAttackHitRangeChecker.cpp",
               "RelativeToolTip": "EnemyAttackHitRangeChecker.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAABAAAA",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-25T06:09:43.703Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "EnemyAttackRangeChecker.cpp",
-              "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\RoboActionGame\\EnemyAttackRangeChecker.cpp",
-              "ToolTip": "D:\\\u3086\u3044\u305C\u307F\\school\\RoboActionGame\\EnemyAttackRangeChecker.cpp",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAowFAAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-25T06:09:13.246Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 9,
               "Title": "Enemy.h",
               "DocumentMoniker": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\Enemy.h",
               "RelativeDocumentMoniker": "Enemy.h",
               "ToolTip": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\Enemy.h",
               "RelativeToolTip": "Enemy.h",
-              "ViewState": "AgIAAEUAAAAAAAAAAAArwFcAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFcAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-12-25T05:52:50.963Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Camera.cpp",
+              "DocumentMoniker": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\Camera.cpp",
+              "RelativeDocumentMoniker": "Camera.cpp",
+              "ToolTip": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\Camera.cpp",
+              "RelativeToolTip": "Camera.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-02T13:37:25.234Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HitChecker.cpp",
+              "DocumentMoniker": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\HitChecker.cpp",
+              "RelativeDocumentMoniker": "HitChecker.cpp",
+              "ToolTip": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\HitChecker.cpp",
+              "RelativeToolTip": "HitChecker.cpp",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-02T14:02:26.497Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Camera.h",
+              "DocumentMoniker": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\Camera.h",
+              "RelativeDocumentMoniker": "Camera.h",
+              "ToolTip": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\Camera.h",
+              "RelativeToolTip": "Camera.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-02T13:37:30.634Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "main.cpp",
+              "DocumentMoniker": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\main.cpp",
+              "RelativeDocumentMoniker": "main.cpp",
+              "ToolTip": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\main.cpp",
+              "RelativeToolTip": "main.cpp",
+              "ViewState": "AgIAAJkAAAAAAAAAAAD4v6UAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-28T09:30:19.446Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Enemy.cpp",
+              "DocumentMoniker": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\Enemy.cpp",
+              "RelativeDocumentMoniker": "Enemy.cpp",
+              "ToolTip": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\Enemy.cpp",
+              "RelativeToolTip": "Enemy.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-28T07:45:51.706Z"
             },
             {
               "$type": "Document",
@@ -184,124 +307,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "HitChecker.cpp",
-              "DocumentMoniker": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\HitChecker.cpp",
-              "RelativeDocumentMoniker": "HitChecker.cpp",
-              "ToolTip": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\HitChecker.cpp",
-              "RelativeToolTip": "HitChecker.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACMAAAAAAAAA",
+              "DocumentIndex": 18,
+              "Title": "EnemyAttackRangeChecker.cpp",
+              "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\RoboActionGame\\EnemyAttackRangeChecker.cpp",
+              "ToolTip": "D:\\\u3086\u3044\u305C\u307F\\school\\RoboActionGame\\EnemyAttackRangeChecker.cpp",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAowFAAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-02T14:02:26.497Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Enemy.cpp",
-              "DocumentMoniker": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\Enemy.cpp",
-              "RelativeDocumentMoniker": "Enemy.cpp",
-              "ToolTip": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\Enemy.cpp",
-              "RelativeToolTip": "Enemy.cpp",
-              "ViewState": "AQIAAFcAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-28T07:45:51.706Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "HitChecker.h",
-              "DocumentMoniker": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\HitChecker.h",
-              "RelativeDocumentMoniker": "HitChecker.h",
-              "ToolTip": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\HitChecker.h",
-              "RelativeToolTip": "HitChecker.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-30T15:09:19.841Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Camera.cpp",
-              "DocumentMoniker": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\Camera.cpp",
-              "RelativeDocumentMoniker": "Camera.cpp",
-              "ToolTip": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\Camera.cpp",
-              "RelativeToolTip": "Camera.cpp",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAACwAAAA6AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-02T13:37:25.234Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "main.cpp",
-              "DocumentMoniker": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\main.cpp",
-              "RelativeDocumentMoniker": "main.cpp",
-              "ToolTip": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\main.cpp",
-              "RelativeToolTip": "main.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-28T09:30:19.446Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Player.cpp",
-              "DocumentMoniker": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\Player.cpp",
-              "RelativeDocumentMoniker": "Player.cpp",
-              "ToolTip": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\Player.cpp",
-              "RelativeToolTip": "Player.cpp",
-              "ViewState": "AgIAAK8BAAAAAAAAAAAAALEBAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-11T08:40:23.138Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "EnemyAttackRangeChecker.h",
-              "DocumentMoniker": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\EnemyAttackRangeChecker.h",
-              "RelativeDocumentMoniker": "EnemyAttackRangeChecker.h",
-              "ToolTip": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\EnemyAttackRangeChecker.h",
-              "RelativeToolTip": "EnemyAttackRangeChecker.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-11T09:28:51.446Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Player.h",
-              "DocumentMoniker": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\Player.h",
-              "RelativeDocumentMoniker": "Player.h",
-              "ToolTip": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\Player.h",
-              "RelativeToolTip": "Player.h",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAAEIAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-11T08:09:02.404Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "BeAttackedPlayerHit.h",
-              "DocumentMoniker": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\BeAttackedPlayerHit.h",
-              "RelativeDocumentMoniker": "BeAttackedPlayerHit.h",
-              "ToolTip": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\BeAttackedPlayerHit.h",
-              "RelativeToolTip": "BeAttackedPlayerHit.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAA4AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-30T16:08:43.063Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "BeAttackedPlayerHit.cpp",
-              "DocumentMoniker": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\BeAttackedPlayerHit.cpp",
-              "RelativeDocumentMoniker": "BeAttackedPlayerHit.cpp",
-              "ToolTip": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\BeAttackedPlayerHit.cpp",
-              "RelativeToolTip": "BeAttackedPlayerHit.cpp",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAA4AAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-30T16:08:59.542Z"
+              "WhenOpened": "2024-12-25T06:09:13.246Z"
             },
             {
               "$type": "Document",
@@ -425,7 +437,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 15,
               "Title": "Stage.cpp",
               "DocumentMoniker": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\Stage.cpp",
               "RelativeDocumentMoniker": "Stage.cpp",
@@ -434,18 +446,6 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-11-28T09:41:32.232Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Camera.h",
-              "DocumentMoniker": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\Camera.h",
-              "RelativeDocumentMoniker": "Camera.h",
-              "ToolTip": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\Camera.h",
-              "RelativeToolTip": "Camera.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-02T13:37:30.634Z"
             },
             {
               "$type": "Document",
@@ -461,7 +461,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 14,
               "Title": "Input.h",
               "DocumentMoniker": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\Input.h",
               "RelativeDocumentMoniker": "Input.h",
@@ -485,7 +485,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 16,
               "Title": "Stage.h",
               "DocumentMoniker": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\Stage.h",
               "RelativeDocumentMoniker": "Stage.h",
@@ -497,7 +497,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 13,
               "Title": "Input.cpp",
               "DocumentMoniker": "E:\\\u3086\u3044\u305C\u307F\\2025\u4F5C\u54C1\\\u5236\u4F5C\u5C55\\ActionGame1\\Input.cpp",
               "RelativeDocumentMoniker": "Input.cpp",

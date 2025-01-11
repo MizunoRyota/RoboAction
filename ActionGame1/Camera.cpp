@@ -40,7 +40,7 @@ void Camera::Update(const Player& player)
     // TODO:z軸上で、プレイヤーから一定距離離れた状態でプレイヤーを常に見続けるよう位置調整
     // カメラに位置を反映.
     targetposition = VAdd(player.GetPos(), VGet(-0.0f, TargetHight, 0.0f));
-    if (isDamage)
+    if (player.GetIsBeAttack())
     {
         ShakeCamera(shakeIntensity, shakeDuration,player);
     }

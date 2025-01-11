@@ -194,6 +194,7 @@ void Enemy::Update(const Player& player, const EnemyAttackRangeChecker& attackRa
 		printfDx("prevState%d\n", prevState);
 		printfDx("PlayAnim%d\n", PlayAnim);
 		printfDx("isAttack%d\n", isAttack);
+		printfDx("isTurn%d\n", isTurn);
 		printfDx("limitRange%d\n", islimitRange);
 		printfDx("isShortAttack%d\n", isShortAttack);
 	}
@@ -258,7 +259,7 @@ Enemy::State Enemy::UpdateEnemyState(const EnemyAttackRangeChecker& attackRange)
 	else if (currentState == State::Run && islimitRange)
 	{
 		nextState = State::Trun;
-		isTurn = true;
+		//isTurn = true;
 	}
 	else if (tire&&!isAttack)
 	{
@@ -321,7 +322,6 @@ void Enemy::UpdateAnimation()
 		// 再生時間がアニメーションの総再生時間に達したら再生時間を０に戻す
 		if (playTime >= animTotalTime)
 		{
-
 			if (currentState == State::Charge)
 			{
 				isCharge = false;
@@ -330,7 +330,6 @@ void Enemy::UpdateAnimation()
 			{
 				isTurn = false;
 			}
-			//InitializeAttack();
 			playTime = static_cast<float>(fmod(playTime, animTotalTime));
 		}
 
@@ -376,8 +375,8 @@ void Enemy::UpdateAnimationState(State prevState)
 	//
 	if (prevState == State::Charge && currentState == State::Run||prevState==State::Trun&&currentState==State::Run&&!isTurn)
 	{
-		isAttack = true;
 		ChangeMotion(AnimKind::Run);
+		isAttack = true;
 	}
 	if (currentState==State::Trun)
 	{

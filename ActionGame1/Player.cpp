@@ -2,6 +2,7 @@
 #include"EffekseerForDXLib.h"
 #include"math.h"
 #include"Pallet.h"
+#include"Enemy.h"
 #include"Player.h"
 #include"Input.h"
 
@@ -13,6 +14,7 @@ Player::Player()
 	, PlayerHandle(-1)
 	, angle(0.0f)
 	,isAttack(false)
+	,isBeAttack(false)
 	,isFirstAttack(true)
 	,isSecondAttack(true)
 	,isThirdAttack(false)
@@ -55,10 +57,26 @@ void Player::Load()
 	// ３ＤモデルのY軸の回転値を９０度にセットする
 	MV1SetRotationXYZ(PlayerHandle, VGet(0.0f, 90.0f * DX_PI_F / 180.0f, 0.0f));
 }
+
+bool Player::BeAttacked(bool BeAttacked)
+{
+	if (BeAttacked)
+	{
+		isBeAttack = true;
+		currentState = State::TakeDamage;
+	}
+	else
+	{
+		isBeAttack = false;
+	}
+
+	return 0;
+}
+
 /// <summary>
 /// 更新
 /// </summary>
-void Player::Update(const Input& input)
+void Player::Update(const Input& input,bool beattackply)
 {
 
 	// パッド入力によって移動パラメータを設定する
@@ -66,6 +84,8 @@ void Player::Update(const Input& input)
 	State prevState = currentState;
 	//AttackAnimKind atttackAnim=currentAttack;
 	// ゲーム状態変化
+
+	BeAttacked(beattackply);
 
     currentState = UpdateMoveParameterWithPad(input, moveVec);
 
@@ -81,7 +101,6 @@ void Player::Update(const Input& input)
 		printfDx("PlayAnim%d\n", PlayAnim);
 		printfDx("isAttack%d\n", isAttack);
 		printfDx("isLimitRange%d\n", isLimitRange);
-
 	}
 	// アニメーションステートの更新
 	if (CheckHitKey(KEY_INPUT_SPACE))
@@ -157,7 +176,6 @@ void Player::UpdateAttack()
 	{
 		currentState = State::LastAttack;
 	}
-
 }
 
 //void Player::ChangeAttackMotion(AttackAnimKind prevAnimKind)
@@ -486,6 +504,11 @@ void Player::UpdateAnimationState(State prevState)
 	{
 		// 立ち止りアニメーションを再生する
 		ChangeMotion(AnimKind::Idol);
+	}
+	if (currentState==State::TakeDamage)
+	{
+		// ダメージモーションを再生する
+		ChangeMotion(AnimKind::TakeDamage);
 	}
 	else if (currentState == State::FirstAttack || currentState == State::SecondAttack || currentState == State::LastAttack && currentState == State::Stand && !isAttack)
 	{

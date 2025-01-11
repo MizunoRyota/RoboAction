@@ -8,17 +8,22 @@ public:
 	// 状態
 	enum class State : int
 	{
-		Stand = 0,		// 立ち止まり
-		Run = 1,		// 走り
-		FinishAttack = 2,		// とどめの一撃
-		FirstAttack = 3,		// 最初の攻撃
-		SecondAttack = 4,		// 2段目の攻撃
-		LastAttack = 5,			// 最後の攻撃
+		None = -1,				// なし
+		Stand = 0,				// 不明
+		FinishAttack = 1,		// とどめの一撃
+		FirstAttack = 2,		// 最初の攻撃
+		SecondAttack = 3,		// 2段目の攻撃
+		LastAttack = 4,			// 最後の攻撃
+		Squat = 5,				//しゃがむ
+		Roll = 6,				//ローリング
+		Idol = 7,				//立ち止まり
+		Run = 8,				//走る
+		TakeDamage = 9,			//ダメージを受ける
 	};
 	enum class AnimKind : int
 	{
 		None = -1,				// なし
-		Unkown = 0,				// 不明
+		Stand = 0,				// 不明
 		FinishAttack = 1,		// とどめの一撃
 		FirstAttack = 2,		// 最初の攻撃
 		SecondAttack = 3,		// 2段目の攻撃
@@ -34,9 +39,10 @@ public:
 	~Player();
 
 	void Load();	//初期化
-	void Update(const Input& input);  //更新
+	void Update(const Input& input, bool beattackply);  //更新
 	State UpdateMoveParameterWithPad(const Input& input, VECTOR& moveVec);//パッドの入力更新
 	void UpdateAngle();
+	bool BeAttacked(bool isBeattack);
 	void LimitRange();
 	void Move(VECTOR& moveVec);
 	void Draw();	//描画
@@ -46,6 +52,7 @@ public:
 
 	// モデルハンドルの取得.
 	const VECTOR& GetPos() const { return position; }
+	const bool& GetIsBeAttack() const { return isBeAttack; }
 
 private:
 	// 静的定数.
@@ -64,6 +71,7 @@ private:
 	VECTOR targetMoveDirection;			// モデルが向くべき方向のベクトル
 	int PlayerHandle;					// プレイヤーのモデルハンドル
 	bool isAttack;
+	bool isBeAttack;
 	bool isLimitRange;
 	float returnRange;					//最大移動距離
 	float angle;				

@@ -9,7 +9,7 @@
 #include"HitChecker.h"
 #include"EnemyAttackRangeChecker.h"
 #include"Player.h"
-
+#include"BeAttackedPlayerHit.h"
 enum STATE
 {
 	STATE_INIT,
@@ -75,12 +75,12 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	Stage* stage = new Stage();
 	Input* input = new Input();
 	Camera* camera = new Camera();
-    Enemy* enemy = new Enemy();
+	Enemy* enemy = new Enemy();
 	Player* player = new Player();
-	HitChecker *hitchecker[HITCHECK_NUM];
+	HitChecker* hitchecker[HITCHECK_NUM];
 	hitchecker[0] = new HitChecker();
 	hitchecker[1] = new EnemyAttackRangeChecker();
-
+	BeAttackedPlayer* beattackply = new BeAttackedPlayer();
 	// エスケープキーが押されるかウインドウが閉じられるまでループ
 	LONGLONG frameTime = 0;
 
@@ -163,12 +163,13 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				{
 					hitchecker[i]->Update(*player, *enemy);
 				}
+				beattackply->Update(*player, *enemy);
 				// プレイヤー制御
 				//EnemyAttackRangeChecker test;
 				//const auto enemyattackRangeHitChecker = static_cast<const EnemyAttackRangeChecker*>(hitchecker[1]);
 				enemy->Update(*player, *static_cast<const EnemyAttackRangeChecker*>(hitchecker[1]));
 
-				player->Update(*input);
+				player->Update(*input,beattackply->GetIsBeAttack());
 				// カメラの制御
 				camera->Update(*player);
 				// スカイドーム制御
