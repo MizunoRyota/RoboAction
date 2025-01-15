@@ -46,10 +46,10 @@ public:
 	void LimitRange();
 	void Move(VECTOR& moveVec);
 	void Draw();	//描画
-
+	void UpdateEffect();	//エフェクトの更新
 	void UpdateShadow();	//プレイヤーの影の更新
 	void DrawShadow();		//プレイヤーの影の描画
-
+	void DrawEffect();		//エフェクトの描画
 	// モデルハンドルの取得.
 	const VECTOR& GetPos() const { return position; }
 	const bool& GetIsBeAttack() const { return isBeAttack; }
@@ -60,6 +60,8 @@ private:
 	static constexpr float Scale = 0.006f;		//大きさ
 	//アニメーションに関するメンバ静的定数
 	static constexpr float playAnimSpeed = 1.5f;		//アニメーションを進める速度
+	static constexpr float playAttackAnimSpeed = 2.0f;		//アニメーションを進める速度
+
 	static constexpr float AnimBlendSpeed = 0.1f;	// アニメーションのブレンド率変化速度
 	static constexpr float	AngleSpeed = 0.6f;		// 角度変化速度
 	static constexpr float	MoveSpeed = 0.50f;		// 移動速度
@@ -97,13 +99,25 @@ private:
 	float ShadowRad;				//影の半径
 
 	void ChangeMotion(AnimKind  motionNum);					//モーション変更
-	void UpdateAnimation();									//Playerのアニメーション更新
+	void UpdateAnimation(State prevState);									//Playerのアニメーション更新
 	void UpdateAnimationState(State prevState);
 	void UpdateAttackState(State prevState);
+	void ResetMotion(State prevState);
 	void UpdateAttack();
 	 
+	//エフェクトに関するメンバ変数
 
-	// アニメーションステートの更新
-	/*void ChangeAttackMotion(AttackAnimKind prevAnimKind);*/
-	//AttackAnimKind UpdateAnimationAttack(AttackAnimKind prevAnimKind);	//プレイヤーの行動アニメーションの更新
+	static constexpr float EffektScale = 10.0f;		//大きさ
+
+	int AttackHandle;
+	// 何でもいいので画像を読み込む。
+	int grBackgroundHandle;
+	int grFrontHandle;
+	// エフェクトの表示する位置を設定する。
+	VECTOR effectPosition;
+	// 時間を初期化する(定期的にエフェクトを再生するため)
+	int time;
+
+	// 再生中のエフェクトのハンドルを初期化する。
+	int playingEffectHandle = -1;
 };

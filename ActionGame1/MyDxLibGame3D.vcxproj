@@ -23,6 +23,7 @@
     <ClCompile Include="Box.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Color.cpp" />
+    <ClCompile Include="Effect.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="EnemyAttackHitRangeChecker.cpp" />
     <ClCompile Include="HitChecker.cpp" />
@@ -37,6 +38,7 @@
     <ClInclude Include="Box.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Color.h" />
+    <ClInclude Include="Effect.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="EnemyAttackRangeChecker.h" />
     <ClInclude Include="HitChecker.h" />

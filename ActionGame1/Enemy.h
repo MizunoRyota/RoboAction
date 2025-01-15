@@ -69,7 +69,7 @@ private:
 	//アニメーションに関するメンバ静的定数
 	static constexpr float playAnimSpeed = 0.7f;		//アニメーションを進める速度
 	static constexpr float AnimBlendSpeed = 0.1f;	// アニメーションのブレンド率変化速度
-	static constexpr float	MoveSpeed = 0.250f;		// 移動速度
+	static constexpr float	MoveSpeed = 0.50f;		// 移動速度
 	static constexpr float Scale = 0.04f;  //大きさ
 	static constexpr float	AngleSpeed = 0.6f;		// 角度変化速度
 
@@ -88,6 +88,7 @@ private:
 	bool isTurn;
 	bool attackReady;
 	bool isChasing;
+	int chaseCount;
 	bool isCharge;
 	bool islimitRange;
 	float tireTimer;
@@ -103,7 +104,6 @@ private:
 	int prevPlayAnim;				//前のアニメーションアタッチ番号
 	float prevPlayTime;				//前のアニメーションの時間の合計
 	float animBlendRate;			//過去と現在のアニメーションのブレンド率
-
 
 	//Enemyーの影
 	VECTOR shadowToppos;			//影の頂点

@@ -11,12 +11,10 @@ EnemyAttackRangeChecker::EnemyAttackRangeChecker()
     , AttackMiddleRange(15.0f)
     , AttackLongRange(50.0f)
     , LengthRange(0)
-{
-}
+{}
 
 EnemyAttackRangeChecker::~EnemyAttackRangeChecker()
-{
-}
+{}
 
 void EnemyAttackRangeChecker::Update(const Player& player, const Enemy& enemy)
 {

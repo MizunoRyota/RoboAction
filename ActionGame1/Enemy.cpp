@@ -12,7 +12,8 @@ Enemy::Enemy()
 	, shadowBottompos(VGet(0.0f, 0.0f, 0.0f))
 	, shadowToppos(VGet(0.0f, 0.0f, 0.0f))
 	, currentState(State::TireIdol)
-	,returnRange(20)
+	, returnRange(15.0f)
+	, chaseCount(0)
 	, animBlendRate(0.0f)
 	, prevPlayAnim(-1)
 	, ShadowRad(1.7f)
@@ -78,7 +79,7 @@ void Enemy::TireTimer()
 		}
 
 		// 経過時間が3000ミリ秒(3秒)以上経過したらフラグを切り替える
-		if (GetNowCount() - tireTimer >= 3000)
+		if (GetNowCount() - tireTimer >= 1500)
 		{
 			tire = false;
 			isCharge = true;
@@ -129,6 +130,7 @@ void Enemy::LimitRange()
 		position = VAdd(position, returnPosition);
 
 		islimitRange = true;
+		chaseCount++;
 	}
 	else
 	{
@@ -140,6 +142,12 @@ void Enemy::RushAttack(const Player& player, const EnemyAttackRangeChecker& atta
 {
 	if (!tire && isAttack && !isCharge&&!islimitRange)
 	{
+		if (chaseCount>=4)
+		{
+			isChasing = false;
+			chaseCount = 0;
+		}
+
 		// プレイヤーと敵の位置ベクトル
 		VECTOR enemyPos = position;
 
@@ -172,7 +180,7 @@ void Enemy::RushAttack(const Player& player, const EnemyAttackRangeChecker& atta
 			VECTOR move = VScale(angleVector, MoveSpeed / distance);  // 現在位置から進む方向
 			position = VAdd(enemyPos, move);
 		}
-		printfDx("%f\n", distance);
+		//printfDx("%f\n", distance);
 	}
 }
 
@@ -196,6 +204,8 @@ void Enemy::Update(const Player& player, const EnemyAttackRangeChecker& attackRa
 		printfDx("isAttack%d\n", isAttack);
 		printfDx("isTurn%d\n", isTurn);
 		printfDx("limitRange%d\n", islimitRange);
+		printfDx("ChaseCount%d\n", chaseCount);
+
 		printfDx("isShortAttack%d\n", isShortAttack);
 	}
 
@@ -207,7 +217,7 @@ void Enemy::Update(const Player& player, const EnemyAttackRangeChecker& attackRa
 	//プレイヤーの方向をムク
 	UpdateAngle(player);
 
-	RushAttack(player, attackRange);
+	//RushAttack(player, attackRange);
 
 	AttackTimer();
 
@@ -359,7 +369,6 @@ void Enemy::UpdateAnimation()
 		// アニメーション２のモデルに対する反映率をセット
 		MV1SetAttachAnimBlendRate(EnemyHandle, prevPlayAnim, 1.0f - animBlendRate);
 	}
-
 }
 
 /// <summary>

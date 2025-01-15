@@ -1,5 +1,6 @@
 #include"DxLib.h"
 #include"EffekseerForDXLib.h"
+#include"Effect.h"
 #include"Pallet.h"
 #include"Skydome.h"
 #include"Stage.h"
@@ -71,6 +72,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	ChangeFont("ラノベPOP v2", DX_CHARSET_DEFAULT);
 
 	// インスタンス生成
+	Effect* effect = new Effect();
 	Skydome* dome = new Skydome();
 	Stage* stage = new Stage();
 	Input* input = new Input();
@@ -171,7 +173,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 
 				player->Update(*input,beattackply->GetIsBeAttack());
 				// カメラの制御
-				camera->Update(*player);
+				camera->Update(*player,*input);
 				// スカイドーム制御
 				dome->SkydomeUpdate();
 
@@ -181,8 +183,10 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				// 描画
 				dome->SkydomeDraw();
 				stage->Draw();
+				effect->Draw();
 				enemy->Draw();
 				player->Draw();
+				DrawEffekseer3D();
 				for (int i = 0; i < HITCHECK_NUM; i++)
 				{
 					hitchecker[i]->DrawCircle();

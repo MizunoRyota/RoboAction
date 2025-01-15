@@ -4,7 +4,6 @@
 
 Stage::Stage()
     :position(VGet(0, 0, -20))
-	, effectPosition ( VGet(0, 0, 0))
 	,effectHandle(0)
     , StageHandle(-1)
 	,time(0)
@@ -22,7 +21,7 @@ void Stage::Load()
 {
     StageHandle = MV1LoadModel("data/model/stage/NewStage.mv1");
 	// エフェクトリソースを読み込む。
-	effectHandle = LoadEffekseerEffect("data/effekseer/EfkFile/GroundFire.efkefc",4.5f);
+	effectHandle = LoadEffekseerEffect("data/effekseer/EfkFile/GroundFire.efkefc",3.5f);
 	
 	SetScalePlayingEffekseer3DEffect(effectHandle, EffektScale, EffektScale,EffektScale);
     // 3Dモデルのスケール決定
@@ -56,6 +55,4 @@ void Stage::Update()
 void Stage::Draw()
 {
     MV1DrawModel(StageHandle);
-	// Effekseerにより再生中のエフェクトを描画する。
-	DrawEffekseer3D();
 }

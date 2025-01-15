@@ -58,6 +58,9 @@
     <ClCompile Include="BeAttackedPlayerHit.cpp">
       <Filter>HitChecks</Filter>
     </ClCompile>
+    <ClCompile Include="Effect.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Pallet.h">
@@ -95,6 +98,9 @@
     </ClInclude>
     <ClInclude Include="BeAttackedPlayerHit.h">
       <Filter>HitChecks</Filter>
+    </ClInclude>
+    <ClInclude Include="Effect.h">
+      <Filter>ソース ファイル</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
