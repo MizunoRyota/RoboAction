@@ -15,7 +15,7 @@ Camera::Camera()
     ,OriginalOffset(VGet(0, 0, 0))
 {
     //‰œs0.1`1000‚Ü‚Å‚ğƒJƒƒ‰‚Ì•`‰æ”ÍˆÍ‚Æ‚·‚é
-    SetCameraNearFar(0.10f, 1000.0f);
+    SetCameraNearFar(0.10f, 1200.0f);
 }
 
 /// <summary>

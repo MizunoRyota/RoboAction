@@ -10,6 +10,7 @@ public:
 	~Input();
 
 	void	Update();
+	XINPUT_STATE input;
 
 	int GetNowFrameInput() const { return nowFrameInput; }
 	int GetNowFrameNewInput() const { return nowFrameNewInput; }

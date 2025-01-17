@@ -26,6 +26,8 @@ Player::Player()
 	, prevPlayTime(0)
 	, animBlendRate(0.0f)
 	, AttackHandle(0)
+	, SecondAttackHandle(0)
+	, ThirdAttackHandle(0)
 {
 	// 処理なし
 }
@@ -42,6 +44,8 @@ void Player::Load()
 
 	// エフェクトリソースを読み込む。
 	AttackHandle = LoadEffekseerEffect("data/effekseer/EfkFile/Attack1.efkefc", 1.0f);
+	SecondAttackHandle = LoadEffekseerEffect("data/effekseer/EfkFile/PlayerSecondAttack1.efkefc", 1.0f);
+	ThirdAttackHandle = LoadEffekseerEffect("data/effekseer/EfkFile/PlayerThirdAttack1.efkefc", 1.0f);
 
 	SetScalePlayingEffekseer3DEffect(AttackHandle, EffektScale, EffektScale, EffektScale);
 
@@ -136,7 +140,7 @@ void Player::Update(const Input& input,bool beattackply)
 		printfDx("isLimitRange%d\n", isLimitRange);
 	}
 	// アニメーションステートの更新
-	if (CheckHitKey(KEY_INPUT_SPACE))
+	if (input.GetNowFrameInput() & PAD_INPUT_C)
 	{
  		UpdateAttack();
 		UpdateAttackState(prevState);
@@ -338,7 +342,7 @@ Player::State Player::UpdateMoveParameterWithPad(const Input& input, VECTOR& mov
 
 	// 移動したかどうかのフラグを初期状態では「移動していない」を表すFALSEにする
 	bool isMoveStick = false;
-	if (!isAttack && currentState != State::TakeDamage)
+	if (!isAttack && currentState != State::TakeDamage&& (input.GetNowFrameInput() & PAD_INPUT_D) == 0)
 	{
 		// 方向ボタン「←」が入力されたらカメラの見ている方向から見て左方向に移動する
 		if (input.GetNowFrameInput() & PAD_INPUT_LEFT)

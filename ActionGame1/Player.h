@@ -110,6 +110,8 @@ private:
 	static constexpr float EffektScale = 10.0f;		//‘å‚«‚³
 
 	int AttackHandle;
+	int SecondAttackHandle;
+	int ThirdAttackHandle;
 	// ‰½‚Å‚à‚¢‚¢‚Ì‚Å‰æ‘œ‚ğ“Ç‚İ‚ŞB
 	int grBackgroundHandle;
 	int grFrontHandle;

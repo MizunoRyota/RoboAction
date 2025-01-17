@@ -124,6 +124,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 			//タイトル画面
 			if (gameStatus == STATE_TITLE)
 			{
+				input->Update();
 
 				ClearDrawScreen();
 
@@ -132,7 +133,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				DrawFormatString(0, 0, Pallet::AliceBlue.GetHandle(), "title");
 
 				// ゲーム状態変化
-				if (CheckHitKey(KEY_INPUT_RETURN))
+				if ((input->GetNowFrameInput() & PAD_INPUT_R) != 0)
 				{
 					gameStatus = STATE_READY;
 				}

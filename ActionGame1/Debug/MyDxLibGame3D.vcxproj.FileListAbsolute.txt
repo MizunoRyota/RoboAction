@@ -3,3 +3,4 @@ D:\ゆいぜみ\2025作品\制作展\ActionGame1\Debug\MyDxLibGame3D.exe
 E:\ゆいぜみ\2025作品\制作展\ActionGame1\Debug\MyDxLibGame3D.exe
 D:\ゆいぜみ\2025Production\2025ProductionExhibition\ActionGame1\Debug\MyDxLibGame3D.exe
 D:\Yuizemi\2025Production\2025ProductionExhibition\ActionGame1\Debug\MyDxLibGame3D.exe
+E:\Yuizemi\2025Production\2025ProductionExhibition\ActionGame1\Debug\MyDxLibGame3D.exe
