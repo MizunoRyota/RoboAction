@@ -8,7 +8,6 @@
 
 Player::Player()
 	:position(VGet(0.0f, 0.0f, 0.0f))
-	,effectPosition(VGet(0.0f, 0.0f, 0.0f))
 	, shadowBottompos(VGet(0.0f, 0.0f, 0.0f))
 	, shadowToppos(VGet(0.0f, 0.0f, 0.0f))
 	, returnRange(15.0f)
@@ -17,7 +16,7 @@ Player::Player()
 	,isAttack(false)
 	,isBeAttack(false)
 	,isFirstAttack(false)
-	,isSecondAttack(true)
+	,isSecondAttack(false)
 	,isThirdAttack(false)
 	, currentState(State::Stand)
 	, ShadowRad(0.3f)
@@ -44,10 +43,12 @@ void Player::Load()
 
 	// エフェクトリソースを読み込む。
 	AttackHandle = LoadEffekseerEffect("data/effekseer/EfkFile/Attack1.efkefc", 1.0f);
-	SecondAttackHandle = LoadEffekseerEffect("data/effekseer/EfkFile/PlayerSecondAttack1.efkefc", 1.0f);
-	ThirdAttackHandle = LoadEffekseerEffect("data/effekseer/EfkFile/PlayerThirdAttack1.efkefc", 1.0f);
+	SecondAttackHandle = LoadEffekseerEffect("data/effekseer/EfkFile/PlayerSecondAttack.efkefc", 0.750f);
+	ThirdAttackHandle = LoadEffekseerEffect("data/effekseer/EfkFile/PlayerThirdAttack.efkefc", 0.750f);
 
 	SetScalePlayingEffekseer3DEffect(AttackHandle, EffektScale, EffektScale, EffektScale);
+	SetScalePlayingEffekseer3DEffect(SecondAttackHandle, EffektScale, EffektScale, EffektScale);
+	SetScalePlayingEffekseer3DEffect(ThirdAttackHandle, EffektScale, EffektScale, EffektScale);
 
 	//値の初期化
 	position = VGet(0.0f, 0.0f, 0.0f);
@@ -86,24 +87,32 @@ void Player::UpdateEffect()
 {
 	if (isAttack)
 	{
-
-		effectPosition = VGet(position.x, position.y, position.z);
-
 		// DXライブラリのカメラとEffekseerのカメラを同期する。
 		Effekseer_Sync3DSetting();
 
+			// エフェクトを再生する。
+			if (isFirstAttack && !isSecondAttack && !isThirdAttack)
+			{
+				playingEffectHandle = PlayEffekseer3DEffect(AttackHandle);
+			}
+			else if (isFirstAttack && isSecondAttack && !isThirdAttack)
+			{
+				playingEffectHandle = PlayEffekseer3DEffect(SecondAttackHandle);
+			}
+			else if (isFirstAttack && isSecondAttack && isThirdAttack)
+			{
+				playingEffectHandle = PlayEffekseer3DEffect(ThirdAttackHandle);
+			}
 		// 定期的にエフェクトを再生する
 		if (time % 60 == 0)
 		{
 			StopEffekseer3DEffect(playingEffectHandle);
-			// エフェクトを再生する。
-			playingEffectHandle = PlayEffekseer3DEffect(AttackHandle);
 		}
 
 		// Effekseerにより再生中のエフェクトを更新する。
 		UpdateEffekseer3D();
 
-		SetPosPlayingEffekseer3DEffect(playingEffectHandle, position.x, position.y + 0.3f, position.z + 1.0f);
+		SetPosPlayingEffekseer3DEffect(playingEffectHandle, position.x, position.y, position.z);
 		SetRotationPlayingEffekseer3DEffect(playingEffectHandle, 0.0f, angle + DX_PI_F, 0.0);
 		// 時間を経過させる。
 		time++;
@@ -142,8 +151,9 @@ void Player::Update(const Input& input,bool beattackply)
 	// アニメーションステートの更新
 	if (input.GetNowFrameInput() & PAD_INPUT_C)
 	{
- 		UpdateAttack();
+		UpdateAttack();
 		UpdateAttackState(prevState);
+		UpdateEffect();
 	}
 	else
 	{
@@ -155,7 +165,6 @@ void Player::Update(const Input& input,bool beattackply)
 	//プレイヤーが向く角度の更新
 	UpdateAngle();
 
-	UpdateEffect();
 	//ポジションの更新
 	Move(moveVec);
 
@@ -202,15 +211,16 @@ void Player::LimitRange()
 
 void Player::UpdateAttack()
 {
-	if (!isFirstAttack)
+	// エフェクトを再生する。
+	if (!isFirstAttack && !isSecondAttack && !isThirdAttack)
 	{
 		currentState = State::FirstAttack;
 	}
-	else if (!isSecondAttack)
+	else if (isFirstAttack && !isSecondAttack && !isThirdAttack)
 	{
 		currentState = State::SecondAttack;
 	}
-	else if(isFirstAttack&& isSecondAttack)
+	else if (isFirstAttack && isSecondAttack && !isThirdAttack)
 	{
 		currentState = State::LastAttack;
 	}
@@ -281,6 +291,12 @@ void Player::UpdateAnimation(State prevState)
 		if (playTime >= animTotalTime)
 		{
 			ResetMotion(prevState);
+			if (isFirstAttack && isSecondAttack && isThirdAttack)
+			{
+				isFirstAttack = false;
+				isSecondAttack = false;
+				isThirdAttack = false;
+			}
 			isAttack=false;
 			playTime = static_cast<float>(fmod(playTime, animTotalTime));
 		}
@@ -531,8 +547,7 @@ void Player::UpdateAnimationState(State prevState)
 	 {
 		 // 走りアニメーションを再生する
 		 ChangeMotion(AnimKind::LastAttack);
-		 isFirstAttack = false;
-		 isSecondAttack = false;
+		 isThirdAttack = true;
 		 isAttack = true;
 	 }
  }

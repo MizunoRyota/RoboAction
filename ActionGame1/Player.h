@@ -112,11 +112,8 @@ private:
 	int AttackHandle;
 	int SecondAttackHandle;
 	int ThirdAttackHandle;
-	// 何でもいいので画像を読み込む。
-	int grBackgroundHandle;
-	int grFrontHandle;
 	// エフェクトの表示する位置を設定する。
-	VECTOR effectPosition;
+
 	// 時間を初期化する(定期的にエフェクトを再生するため)
 	int time;
 

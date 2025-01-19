@@ -27,6 +27,7 @@ Enemy::Enemy()
 	, tire(false)
 	, playTime(0)
 	, attackTimer(0)
+	,TireHandle(0)
 {
 	//処理なし
 }
@@ -40,6 +41,12 @@ void Enemy::Load()
 {
 	// モデルの読み込み
 	EnemyHandle = MV1LoadModel("data/model/Enemy/newEnemy.mv1");
+
+	// エフェクトリソースを読み込む。
+	TireHandle = LoadEffekseerEffect("data/effekseer/EfkFile/EnemyTire.efkefc", 1.5f);
+
+	SetScalePlayingEffekseer3DEffect(TireHandle, EffektScale, EffektScale, EffektScale);
+
 	// 3Dモデルのスケール決定
 	MV1SetScale(EnemyHandle, VGet(Scale, Scale, Scale));
 	// プレイヤーのモデルの座標を更新する
@@ -79,7 +86,7 @@ void Enemy::TireTimer()
 		}
 
 		// 経過時間が3000ミリ秒(3秒)以上経過したらフラグを切り替える
-		if (GetNowCount() - tireTimer >= 1500)
+		if (GetNowCount() - tireTimer >= 5000)
 		{
 			tire = false;
 			isCharge = true;
@@ -98,7 +105,7 @@ void Enemy::AttackTimer()
 			attackTimer = GetNowCount();  // ミリ秒単位で現在時刻を取得
 		}
 		// 経過時間が3000ミリ秒(3秒)以上経過したらフラグを切り替える
-		if (GetNowCount() - attackTimer >= 15000)
+		if (GetNowCount() - attackTimer >= 1000)
 		{
 			attackTimer = 0;
 			ChangeTire();
@@ -184,6 +191,30 @@ void Enemy::RushAttack(const Player& player, const EnemyAttackRangeChecker& atta
 	}
 }
 
+void Enemy::UpdateEffect()
+{
+
+		// DXライブラリのカメラとEffekseerのカメラを同期する。
+		Effekseer_Sync3DSetting();
+
+		playingEffectHandle = PlayEffekseer3DEffect(TireHandle);
+		// 定期的にエフェクトを再生する
+		if (time % 60 == 0)
+		{
+			StopEffekseer3DEffect(playingEffectHandle);
+			// エフェクトを再生する。
+		}
+
+		// Effekseerにより再生中のエフェクトを更新する。
+		UpdateEffekseer3D();
+
+		SetPosPlayingEffekseer3DEffect(playingEffectHandle, position.x, position.y, position.z);
+		SetRotationPlayingEffekseer3DEffect(playingEffectHandle, 0.0f, angle + DX_PI_F, 0.0);
+		// 時間を経過させる。
+		time++;
+	
+}
+
 void Enemy::Update(const Player& player, const EnemyAttackRangeChecker& attackRange)
 {
 	//今の状態を前の状態に変更
@@ -191,6 +222,7 @@ void Enemy::Update(const Player& player, const EnemyAttackRangeChecker& attackRa
 
 	//疲れている状態の制限時間更新処理
 	TireTimer();
+	UpdateEffect();
 
 	if (CheckHitKey(KEY_INPUT_R))
 	{
@@ -220,6 +252,7 @@ void Enemy::Update(const Player& player, const EnemyAttackRangeChecker& attackRa
 	//RushAttack(player, attackRange);
 
 	AttackTimer();
+
 
 	LimitRange();
 

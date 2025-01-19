@@ -55,6 +55,7 @@ public:
 	void UpdateAngle(const Player& player);			//向きの更新
 	void UpdateAnimationState(State prevState);		//
 	void UpdateAnimation();							//
+	void UpdateEffect();
 	void ChangeChasing();
 	void LimitRange();
 	void AttackTimer();
@@ -82,8 +83,6 @@ private:
 	//Enemyの攻撃に関するメンバ変数
 	bool isAttack;
 	bool isShortAttack;
-	bool isMiddleAttack;
-	bool isLongAttack;
 	bool tire;
 	bool isTurn;
 	bool attackReady;
@@ -109,6 +108,24 @@ private:
 	VECTOR shadowToppos;			//影の頂点
 	VECTOR shadowBottompos;			//影の底辺
 	float ShadowRad;				//影の半径
+
+	//エフェクトに関するメンバ変数
+
+	static constexpr float EffektScale = 10.0f;		//大きさ
+
+	
+	int TireHandle;
+
+	// 何でもいいので画像を読み込む。
+	int grBackgroundHandle;
+	int grFrontHandle;
+	// エフェクトの表示する位置を設定する。
+	VECTOR effectPosition;
+	// 時間を初期化する(定期的にエフェクトを再生するため)
+	int time;
+
+	// 再生中のエフェクトのハンドルを初期化する。
+	int playingEffectHandle = -1;
 
 };
 
