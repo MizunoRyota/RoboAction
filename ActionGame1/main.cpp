@@ -10,6 +10,7 @@
 #include"HitChecker.h"
 #include"EnemyAttackRangeChecker.h"
 #include"Player.h"
+#include"UI.h"
 #include"BeAttackedPlayerHit.h"
 enum STATE
 {
@@ -79,6 +80,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	Camera* camera = new Camera();
 	Enemy* enemy = new Enemy();
 	Player* player = new Player();
+	UI* ui = new UI();
 	HitChecker* hitchecker[HITCHECK_NUM];
 	hitchecker[0] = new HitChecker();
 	hitchecker[1] = new EnemyAttackRangeChecker();
@@ -116,7 +118,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				enemy->Load();
 				player->Load();
 				camera->Load();
-
+				ui->Load();
 				//ゲーム状態変化
 				gameStatus = STATE_TITLE;
 			}
@@ -192,6 +194,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				{
 					hitchecker[i]->DrawCircle();
 				}
+				ui->DrawGame(*input);
 			}
 			//ゲームオーバー演出
 			if (gameStatus == STATE_END)
