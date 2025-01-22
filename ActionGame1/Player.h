@@ -1,6 +1,7 @@
 #pragma once
 
 class Input;
+class Camera;
 
 class Player
 {
@@ -39,10 +40,10 @@ public:
 	~Player();
 
 	void Load();	//初期化
-	void Update(const Input& input, bool beattackply);  //更新
-	State UpdateMoveParameterWithPad(const Input& input, VECTOR& moveVec);//パッドの入力更新
+	void Update(const Input& input, bool beattackply, const Camera& camera);  //更新
+	State UpdateMoveParameterWithPad(const Input& input, VECTOR& moveVec, const Camera& camera, VECTOR& upMoveVec, VECTOR& leftMoveVec);//パッドの入力更新
 	void UpdateAngle();
-	bool BeAttacked(bool isBeattack);
+	bool BeAttacked(bool isOnAttack);
 	void LimitRange();
 	void Move(VECTOR& moveVec);
 	void Draw();	//描画
@@ -52,7 +53,8 @@ public:
 	void DrawEffect();		//エフェクトの描画
 	// モデルハンドルの取得.
 	const VECTOR& GetPos() const { return position; }
-	const bool& GetIsBeAttack() const { return isBeAttack; }
+
+	const bool& GetisOnAttack() const { return isOnAttack; }
 
 private:
 	// 静的定数.
@@ -73,7 +75,7 @@ private:
 	VECTOR targetMoveDirection;			// モデルが向くべき方向のベクトル
 	int PlayerHandle;					// プレイヤーのモデルハンドル
 	bool isAttack;
-	bool isBeAttack;
+	bool isOnAttack;
 	bool isLimitRange;
 	float returnRange;					//最大移動距離
 	float angle;				

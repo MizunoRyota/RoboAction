@@ -30,7 +30,6 @@ void HitChecker::Update(const Player& player,const Enemy& enemy  )
     enemyCircle = VAdd(enemy.GetPos(), VGet(0.0f, PlayerHight, 0.0f));
     //当たっているかのチェック
     isHit = CheckHit(player, enemy);
-
 }
 
 bool HitChecker::CheckHit(const Player& player, const Enemy& enemy)

@@ -1,14 +1,12 @@
 #pragma once
-
-class BeAttackedPlayer
+class BeAttackedEnemy
 {
 public:
-	BeAttackedPlayer();
-	~BeAttackedPlayer();
+	BeAttackedEnemy();
+	~BeAttackedEnemy();
 	void Update(const Player& player, const Enemy& enemy);
 	bool CheckBeAttackHit(const Player& player, const Enemy& enemy);
 	const bool& GetisOnAttack() const { return isOnAttack; }
-
 private:
 	static constexpr  float PlayerHight = 0.8f;		//ƒvƒŒƒCƒ„[‚Ì‚‚³
 	bool isOnAttack;

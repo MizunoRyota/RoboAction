@@ -13,7 +13,7 @@ BeAttackedPlayer::BeAttackedPlayer()
     , enemyCircle(VGet(0, 0, 0))
     //“–‚½‚Á‚Ä‚¢‚é‚©
     , Length(0)
-    , IsBeAttack(false)
+    , isOnAttack(false)
 {
 }
 
@@ -30,11 +30,11 @@ void BeAttackedPlayer::Update(const Player& player, const Enemy& enemy)
 
     if (CheckBeAttackHit(player, enemy))
     {
-        IsBeAttack = true;
+        isOnAttack = true;
     }
     else
     {
-        IsBeAttack = false;
+        isOnAttack = false;
     }
 }
 

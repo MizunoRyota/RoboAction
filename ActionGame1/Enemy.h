@@ -125,7 +125,7 @@ private:
 	int time;
 
 	// 再生中のエフェクトのハンドルを初期化する。
-	int playingEffectHandle = -1;
+	int EnemyEffectHandle = -1;
 
 };
 

@@ -1,17 +1,17 @@
 #include"DxLib.h"
 #include"Camera.h"
 #include"Input.h"
+#include"Enemy.h"
 #include"Player.h"
 
 /// <summary>
 /// コンストラクタ
 /// </summary>
 Camera::Camera()
-    : angleH(0)
-    , angleV(0)
-    ,shakeTime(0)
+    :shakeTime(0)
     ,isDamage(true)
     ,position  (VGet(0, 0, 0))
+    , AngleVec(VGet(0, 0, 0))
     ,OriginalOffset(VGet(0, 0, 0))
 {
     //奥行0.1～1000までをカメラの描画範囲とする
@@ -31,72 +31,73 @@ void Camera::Load()
     position = VGet(0, Hight, Zoom);
 }
 
-void Camera::Update(const Player& player,const Input& input)
+void Camera::Update(const Player& player,const Input& input, const Enemy& enemy)
 {
-    if (CheckHitKey(KEY_INPUT_LSHIFT) || (input.GetNowFrameInput() & PAD_INPUT_C))
+
+    // 「←」ボタンが押されていたら水平角度をマイナスする
+    if (rightInput->IsInputAnalogKey(Input::AnalogLeft))
     {
-        // 「←」ボタンが押されていたら水平角度をマイナスする
-        if (input.GetNowFrameInput() & PAD_INPUT_LEFT)
+        angleHorizontal += AngleSpeed;
+
+        // －１８０度以下になったら角度値が大きくなりすぎないように３６０度を足す
+        if (angleHorizontal > DX_PI_F)
         {
-            angleH -= camaeraSpeed;
-
-            // －１８０度以下になったら角度値が大きくなりすぎないように３６０度を足す
-            if (angleH < -DX_PI_F)
-            {
-                angleH += DX_TWO_PI_F;
-            }
-        }
-
-        // 「→」ボタンが押されていたら水平角度をプラスする
-        if (input.GetNowFrameInput() & PAD_INPUT_RIGHT)
-        {
-            angleH += camaeraSpeed;
-
-            // １８０度以上になったら角度値が大きくなりすぎないように３６０度を引く
-            if (angleH > DX_PI_F)
-            {
-                angleH -= DX_TWO_PI_F;
-            }
-        }
-
-        // 「↑」ボタンが押されていたら垂直角度をマイナスする
-        if (input.GetNowFrameInput() & PAD_INPUT_UP)
-        {
-            angleV -= camaeraSpeed;
-
-            // ある一定角度以下にはならないようにする
-            if (angleV < -DX_PI_F * 0.5f + 0.6f)
-            {
-                angleV = -DX_PI_F * 0.5f + 0.6f;
-            }
-        }
-
-        // 「↓」ボタンが押されていたら垂直角度をプラスする
-        if (input.GetNowFrameInput() & PAD_INPUT_DOWN)
-        {
-            angleV += camaeraSpeed;
-
-            // ある一定角度以上にはならないようにする
-            if (angleV > DX_PI_F * 0.5f - 0.6f)
-            {
-                angleV = DX_PI_F * 0.5f - 0.6f;
-            }
+            angleHorizontal -= DX_TWO_PI_F;
         }
     }
+
+    // 「→」ボタンが押されていたら水平角度をプラスする
+    if (rightInput->IsInputAnalogKey(Input::AnalogRight))
+    {
+        angleHorizontal -= AngleSpeed;
+
+        // １８０度以上になったら角度値が大きくなりすぎないように３６０度を引く
+        if (angleHorizontal < -DX_PI_F)
+        {
+            angleHorizontal += DX_TWO_PI_F;
+        }
+    }
+
+    // 「↑」ボタンが押されていたら垂直角度をマイナスする
+    if (rightInput->IsInputAnalogKey(Input::AnalogUp))
+    {
+        angleVertical += AngleSpeed;
+
+        //// ある一定角度以下にはならないようにする
+        if (angleVertical > DX_PI_F * 0.5f - 0.6f)
+        {
+            angleVertical = DX_PI_F * 0.5f - 0.6f;
+        }
+    }
+
+    // 「↓」ボタンが押されていたら垂直角度をプラスする
+    if (rightInput->IsInputAnalogKey(Input::AnalogDown))
+    {
+        angleVertical -= AngleSpeed;
+
+        //// ある一定角度以上にはならないようにする
+        if (angleVertical < -DX_PI_F * 0.5f + 0.6f)
+        {
+            angleVertical = -DX_PI_F * 0.5f + 0.6f;
+        }
+    }
+    
     // z軸上で、プレイヤーから一定距離離れた状態でプレイヤーを常に見続けるよう位置調整
     // カメラに位置を反映.
-    if (player.GetIsBeAttack())
+    if (player.GetisOnAttack())
     {
         ShakeCamera(shakeIntensity, shakeDuration,player);
     }
     else
     {
-        position = VAdd(player.GetPos(), VGet(-0.0f, Hight, Zoom));
+        AngleVec = VSub(enemy.GetPos(), player.GetPos());
+        AngleVec = VNorm(AngleVec);
+
     }
 
-    targetposition = VAdd(player.GetPos(), VGet(-0.0f, TargetHight, 0.0f));
+    targetposition = VAdd(enemy.GetPos(), VGet(-0.0f, TargetHight, 0.0f));
 
-    FixCameraPosition();
+    //FixCameraPosition();
 
     // カメラに位置を反映.
     SetCameraPositionAndTarget_UpVecY(position, targetposition);
@@ -106,10 +107,10 @@ void Camera::Update(const Player& player,const Input& input)
 void Camera::FixCameraPosition()
 {
     // 水平方向の回転はＹ軸回転
-    auto rotY = MGetRotY(angleH);
+    auto rotY = MGetRotY(angleHorizontal);
 
     // 垂直方向の回転はＺ軸回転 )
-    auto rotZ = MGetRotZ(angleV);
+    auto rotZ = MGetRotZ(angleVertical);
 
     // カメラからプレイヤーまでの初期距離をセット
     float cameraPlayerLength = Zoom;
@@ -120,10 +121,10 @@ void Camera::FixCameraPosition()
     // 注視点の座標を足したものがカメラの座標
     position = VAdd(VTransform(VTransform(VGet(-cameraPlayerLength, 0.0f, 0.0f), rotZ), rotY), targetposition);
 
-    if (position.y<=0)
+ /*   if (position.y<=0)
     {
         position.y = 0.50f;
-    }
+    }*/
 
 }
 
@@ -133,9 +134,9 @@ void Camera::ShakeCamera(float intensity, float duration,const Player& player)
     if (shakeTime < duration)
     {
         // ランダムな揺れを生成
-        Offset.x = (rand() % 3 - 1) * intensity / 100.0f;
-        Offset.y = (rand() % 3 - 1) * intensity / 100.0f;
-        Offset.z = (rand() % 3 - 1) * intensity / 100.0f;
+        Offset.x = (rand() % 5 - 1) * intensity / 100.0f;
+        Offset.y = (rand() % 5 - 1) * intensity / 100.0f;
+        Offset.z = (rand() % 5 - 1) * intensity / 100.0f;
 
         // カメラ位置を更新
         position=VGet(position.x + Offset.x, position.y + Offset.y, position.z + Offset.z);

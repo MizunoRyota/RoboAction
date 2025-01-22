@@ -135,7 +135,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				DrawFormatString(0, 0, Pallet::AliceBlue.GetHandle(), "title");
 
 				// ゲーム状態変化
-				if ((input->GetNowFrameInput() & PAD_INPUT_R) != 0)
+				if ((input->GetNowFrameInput() & PAD_INPUT_R) != 0|| CheckHitKey(KEY_INPUT_SPACE))
 				{
 					gameStatus = STATE_READY;
 				}
@@ -174,9 +174,9 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				//const auto enemyattackRangeHitChecker = static_cast<const EnemyAttackRangeChecker*>(hitchecker[1]);
 				enemy->Update(*player, *static_cast<const EnemyAttackRangeChecker*>(hitchecker[1]));
 
-				player->Update(*input,beattackply->GetIsBeAttack());
+				player->Update(*input,beattackply->GetisOnAttack(),*camera);
 				// カメラの制御
-				camera->Update(*player,*input);
+				camera->Update(*player,*input,*enemy);
 				// スカイドーム制御
 				dome->SkydomeUpdate();
 
@@ -186,10 +186,9 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				// 描画
 				dome->SkydomeDraw();
 				stage->Draw();
-				effect->Draw();
 				enemy->Draw();
+				effect->Draw();
 				player->Draw();
-				DrawEffekseer3D();
 				for (int i = 0; i < HITCHECK_NUM; i++)
 				{
 					hitchecker[i]->DrawCircle();

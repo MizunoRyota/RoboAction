@@ -51,6 +51,7 @@ void Enemy::Load()
 	MV1SetScale(EnemyHandle, VGet(Scale, Scale, Scale));
 	// プレイヤーのモデルの座標を更新する
 	MV1SetPosition(EnemyHandle, position);
+
 }
 
 void Enemy::InitializeAttack()
@@ -105,7 +106,7 @@ void Enemy::AttackTimer()
 			attackTimer = GetNowCount();  // ミリ秒単位で現在時刻を取得
 		}
 		// 経過時間が3000ミリ秒(3秒)以上経過したらフラグを切り替える
-		if (GetNowCount() - attackTimer >= 1000)
+		if (GetNowCount() - attackTimer >= 15000)
 		{
 			attackTimer = 0;
 			ChangeTire();
@@ -193,26 +194,26 @@ void Enemy::RushAttack(const Player& player, const EnemyAttackRangeChecker& atta
 
 void Enemy::UpdateEffect()
 {
+	effectPosition = VGet(position.x, position.y, position.z);
+	// DXライブラリのカメラとEffekseerのカメラを同期する。
+	Effekseer_Sync3DSetting();
 
-		// DXライブラリのカメラとEffekseerのカメラを同期する。
-		Effekseer_Sync3DSetting();
+	EnemyEffectHandle = PlayEffekseer3DEffect(TireHandle);
+	// 定期的にエフェクトを再生する
+	if (time % 60 == 0)
+	{
+		StopEffekseer3DEffect(EnemyEffectHandle);
+		// エフェクトを再生する。
+	}
 
-		playingEffectHandle = PlayEffekseer3DEffect(TireHandle);
-		// 定期的にエフェクトを再生する
-		if (time % 60 == 0)
-		{
-			StopEffekseer3DEffect(playingEffectHandle);
-			// エフェクトを再生する。
-		}
+	// Effekseerにより再生中のエフェクトを更新する。
+	UpdateEffekseer3D();
 
-		// Effekseerにより再生中のエフェクトを更新する。
-		UpdateEffekseer3D();
+	SetPosPlayingEffekseer3DEffect(EnemyEffectHandle, effectPosition.x, effectPosition.y, effectPosition.z);
+	SetRotationPlayingEffekseer3DEffect(EnemyEffectHandle, 0.0f, angle + DX_PI_F, 0.0);
+	// 時間を経過させる。
+	time++;
 
-		SetPosPlayingEffekseer3DEffect(playingEffectHandle, position.x, position.y, position.z);
-		SetRotationPlayingEffekseer3DEffect(playingEffectHandle, 0.0f, angle + DX_PI_F, 0.0);
-		// 時間を経過させる。
-		time++;
-	
 }
 
 void Enemy::Update(const Player& player, const EnemyAttackRangeChecker& attackRange)
@@ -249,10 +250,9 @@ void Enemy::Update(const Player& player, const EnemyAttackRangeChecker& attackRa
 	//プレイヤーの方向をムク
 	UpdateAngle(player);
 
-	//RushAttack(player, attackRange);
+	RushAttack(player, attackRange);
 
 	AttackTimer();
-
 
 	LimitRange();
 
