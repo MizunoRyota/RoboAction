@@ -15,6 +15,7 @@ Player::Player()
     , PlayerHandle(-1)
     , angle(0.0f)
     , isAttack(false)
+    ,isInvincible(0)
     , isOnAttack(false)
     , isFirstAttack(false)
     , isSecondAttack(false)
@@ -25,6 +26,8 @@ Player::Player()
     , prevPlayAnim(-1)
     , prevPlayTime(0)
     , time(0)
+    ,alpha(0)
+    , invincible(0)
     , animBlendRate(0.0f)
     , AttackHandle(0)
     , SecondAttackHandle(0)
@@ -85,6 +88,54 @@ bool Player::BeAttacked(bool BeAttacked)
     return 0;
 }
 
+void Player::InvincibleTimer()
+{
+    if (isOnAttack|| isInvincible != 0)
+    {
+        // 初回の呼び出し時に開始時刻を設定
+        if (isInvincible == 0)
+        {
+            isInvincible = GetNowCount();  // ミリ秒単位で現在時刻を取得
+        }
+
+        // 経過時間が3000ミリ秒(3秒)以上経過したらフラグを切り替える
+        if (GetNowCount() - isInvincible >= 1000)
+        {
+            isInvincible = 0;
+        }
+        else
+        {
+            // 初回の呼び出し時に開始時刻を設定
+            if (invincible == 0)
+            {
+                invincible = GetNowCount();  // ミリ秒単位で現在時刻を取得
+            }
+
+            // 経過時間が3000ミリ秒(3秒)以上経過したらフラグを切り替える
+            if (GetNowCount() - invincible >= 100)
+            {
+                invincible = 0;
+            }
+            else
+            {
+                if (alpha == 0.0f)
+                {
+                    alpha = 1.0f;
+                }
+                else
+                {
+                    alpha = 0.0f;
+                }
+            }
+        }
+
+    }
+    else
+    {
+        alpha = 1.0f;
+    }
+}
+
 void Player::UpdateEffect()
 {
     if (isAttack)
@@ -114,7 +165,7 @@ void Player::UpdateEffect()
         // Effekseerにより再生中のエフェクトを更新する。
         UpdateEffekseer3D();
 
-        SetPosPlayingEffekseer3DEffect(playingEffectHandle, position.x, position.y + 0.5f, position.z);
+        SetPosPlayingEffekseer3DEffect(playingEffectHandle, position.x, position.y + 0.2f, position.z);
         SetRotationPlayingEffekseer3DEffect(playingEffectHandle, 0.0f, angle + DX_PI_F, 0.0);
         // 時間を経過させる。
         time++;
@@ -177,7 +228,8 @@ void Player::Update(const Input& input, bool beattackply, const Camera& camera)
 
     //アニメーション処理
     UpdateAnimation(prevState);
-
+    InvincibleTimer();
+    MV1SetOpacityRate(PlayerHandle, alpha);
 }
 
 void Player::LimitRange()
@@ -591,5 +643,7 @@ void Player::Draw()
     //描画
     DrawShadow();
 
+
     MV1DrawModel(PlayerHandle);
+
 }

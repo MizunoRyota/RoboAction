@@ -187,8 +187,8 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				dome->SkydomeDraw();
 				stage->Draw();
 				enemy->Draw();
-				effect->Draw();
 				player->Draw();
+				effect->Draw();
 				for (int i = 0; i < HITCHECK_NUM; i++)
 				{
 					hitchecker[i]->DrawCircle();

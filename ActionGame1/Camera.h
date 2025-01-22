@@ -33,7 +33,7 @@ private:
 	// —h‚ê‚Ì‹­‚³‚Æ‘±ŠÔ
 	static constexpr float shakeIntensity = 5.0f;
 	static constexpr float shakeDuration = 2.0f;
-	static constexpr float Scale = 3.0f;		//‹——£
+	static constexpr float Distance = 5.0f;		//‹——£
 
 	float shakeTime;
 	bool isDamage;

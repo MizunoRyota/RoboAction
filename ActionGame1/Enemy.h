@@ -81,32 +81,32 @@ private:
 	int EnemyHandle;
 	int hp;
 	//Enemyの攻撃に関するメンバ変数
-	bool isAttack;
 	bool isShortAttack;
-	bool tire;
-	bool isTurn;
+	bool islimitRange;
 	bool attackReady;
 	bool isChasing;
-	int chaseCount;
+	bool isAttack;
 	bool isCharge;
-	bool islimitRange;
-	float tireTimer;
+	bool isTurn;
+	bool tire;
 	float attackTimer;
 	float returnRange;
+	float tireTimer;
+	int chaseCount;
 	//アニメーションに関するメンバ変数
 	State currentState;				//現在のアニメーションの状態
 	float playTime;					//アニメーションの時間の合計
-	int PlayAnim;					//現在のアニメーションアタッチ番号
-	int AttachIndex;				//アニメーションを付与される変数
 	float AnimTime;					//アニメーションを進める変数
+	int AttachIndex;					//アニメーションを付与される変数
+	int PlayAnim;					//現在のアニメーションアタッチ番号
 
-	int prevPlayAnim;				//前のアニメーションアタッチ番号
+	float animBlendRate;				//過去と現在のアニメーションのブレンド率
 	float prevPlayTime;				//前のアニメーションの時間の合計
-	float animBlendRate;			//過去と現在のアニメーションのブレンド率
+	int prevPlayAnim;				//前のアニメーションアタッチ番号
 
 	//Enemyーの影
 	VECTOR shadowToppos;			//影の頂点
-	VECTOR shadowBottompos;			//影の底辺
+	VECTOR shadowBottompos;		//影の底辺
 	float ShadowRad;				//影の半径
 
 	//エフェクトに関するメンバ変数

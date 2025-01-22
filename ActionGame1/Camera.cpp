@@ -86,13 +86,15 @@ void Camera::Update(const Player& player,const Input& input, const Enemy& enemy)
     // ÉJÉÅÉâÇ…à íuÇîΩâf.
     if (player.GetisOnAttack())
     {
-        ShakeCamera(shakeIntensity, shakeDuration,player);
+        //ShakeCamera(shakeIntensity, shakeDuration,player);
     }
     else
     {
-        AngleVec = VSub(enemy.GetPos(), player.GetPos());
+        AngleVec = VSub(player.GetPos(), enemy.GetPos());
         AngleVec = VNorm(AngleVec);
-
+        AngleVec = VScale(AngleVec, Distance);
+        position = VAdd(player.GetPos(),AngleVec);
+        position.y = 2.0f;
     }
 
     targetposition = VAdd(enemy.GetPos(), VGet(-0.0f, TargetHight, 0.0f));
