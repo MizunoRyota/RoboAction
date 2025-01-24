@@ -4,6 +4,7 @@
 #include"Pallet.h"
 #include"Skydome.h"
 #include"Stage.h"
+#include"EnergyBall.h"
 #include"Input.h"
 #include"Camera.h"
 #include"Enemy.h"
@@ -76,6 +77,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	Effect* effect = new Effect();
 	Skydome* dome = new Skydome();
 	Stage* stage = new Stage();
+    Energy* energy = new Energy();
 	Input* input = new Input();
 	Camera* camera = new Camera();
 	Enemy* enemy = new Enemy();
@@ -116,6 +118,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 			{
 				stage->Load();
 				enemy->Load();
+                energy->Load();
 				player->Load();
 				camera->Load();
 				ui->Load();
@@ -169,11 +172,14 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 					hitchecker[i]->Update(*player, *enemy);
 				}
 				beattackply->Update(*player, *enemy);
-				// プレイヤー制御
+
 				//EnemyAttackRangeChecker test;
 				//const auto enemyattackRangeHitChecker = static_cast<const EnemyAttackRangeChecker*>(hitchecker[1]);
 				enemy->Update(*player, *static_cast<const EnemyAttackRangeChecker*>(hitchecker[1]));
 
+                energy->Update(*enemy);
+
+				// プレイヤー制御
 				player->Update(*input,beattackply->GetisOnAttack(),*camera);
 				// カメラの制御
 				camera->Update(*player,*input,*enemy);
@@ -186,6 +192,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				// 描画
 				dome->SkydomeDraw();
 				stage->Draw();
+                energy->Draw();
 				enemy->Draw();
 				player->Draw();
 				effect->Draw();

@@ -65,6 +65,8 @@ public:
 	// モデルハンドルの取得.
 	const VECTOR& GetPos() const { return position; }
 	const bool& GetIsAttack() const { return isAttack; }
+	const int& GetChaseCount() const { return chaseCount; }
+
 
 private:
 	//アニメーションに関するメンバ静的定数
