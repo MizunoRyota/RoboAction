@@ -1,0 +1,546 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Enemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Enemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\EnergyBall.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:EnergyBall.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Sound.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Sound.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Sound.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Sound.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\UI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:UI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\UI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:UI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\EnergyBall.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:EnergyBall.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Stage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Stage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\YUIZEMI\\2025PRODUCTION\\2025PRODUCTIONEXHIBITION\\ROBOACTION\\EFFEKSEERFORDXLIB.H\\DXLIB.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:EFFEKSEERFORDXLIB.H\\DXLIB.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Input.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Input.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\OnAttackedPlayerHit.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:OnAttackedPlayerHit.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\OnAttackedEnemyHit.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:OnAttackedEnemyHit.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\HitChecker.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:HitChecker.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\EnemyAttackHitRangeChecker.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:EnemyAttackHitRangeChecker.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\GameManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:GameManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Input.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Input.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\GameManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:GameManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\OnAttackedPlayerHit.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:OnAttackedPlayerHit.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\OnAttackedEnemyHit.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:OnAttackedEnemyHit.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Effect.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Effect.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Skydome.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Skydome.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Skydome.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Skydome.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\EnemyAttackRangeChecker.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:EnemyAttackRangeChecker.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\HitChecker.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:HitChecker.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\ROboAction\\EffekseerForDXLib.h\\Effekseer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:EffekseerForDXLib.h\\Effekseer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 291,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Player.h",
+              "DocumentMoniker": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Player.h",
+              "RelativeDocumentMoniker": "Player.h",
+              "ToolTip": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Player.h",
+              "RelativeToolTip": "Player.h",
+              "ViewState": "AgIAACMAAAAAAAAAAAAAAC4AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-30T08:12:24.193Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Enemy.h",
+              "DocumentMoniker": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Enemy.h",
+              "RelativeDocumentMoniker": "Enemy.h",
+              "ToolTip": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Enemy.h",
+              "RelativeToolTip": "Enemy.h",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAqwFcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-30T08:46:09.775Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "DxLib.h",
+              "DocumentMoniker": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\EffekseerForDXLib.h\\DxLib.h",
+              "RelativeDocumentMoniker": "EffekseerForDXLib.h\\DxLib.h",
+              "ToolTip": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\EffekseerForDXLib.h\\DxLib.h",
+              "RelativeToolTip": "EffekseerForDXLib.h\\DxLib.h",
+              "ViewState": "AgIAABMDAAAAAAAAAAAjwCwDAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-02-05T09:36:48.66Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Player.cpp",
+              "DocumentMoniker": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Player.cpp",
+              "RelativeDocumentMoniker": "Player.cpp",
+              "ToolTip": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Player.cpp",
+              "RelativeToolTip": "Player.cpp",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAqwD8AAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-30T08:12:52.262Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Sound.cpp",
+              "DocumentMoniker": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Sound.cpp",
+              "RelativeDocumentMoniker": "Sound.cpp",
+              "ToolTip": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Sound.cpp",
+              "RelativeToolTip": "Sound.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-06T18:53:40.114Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Sound.h",
+              "DocumentMoniker": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Sound.h",
+              "RelativeDocumentMoniker": "Sound.h",
+              "ToolTip": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Sound.h",
+              "RelativeToolTip": "Sound.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-02-06T18:53:53.984Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Enemy.cpp",
+              "DocumentMoniker": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Enemy.cpp",
+              "RelativeDocumentMoniker": "Enemy.cpp",
+              "ToolTip": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Enemy.cpp",
+              "RelativeToolTip": "Enemy.cpp",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAANQBAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-30T08:47:36.534Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UI.h",
+              "DocumentMoniker": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\UI.h",
+              "RelativeDocumentMoniker": "UI.h",
+              "ToolTip": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\UI.h",
+              "RelativeToolTip": "UI.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-02-05T05:50:36.208Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Camera.h",
+              "DocumentMoniker": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Camera.h",
+              "RelativeDocumentMoniker": "Camera.h",
+              "ToolTip": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Camera.h",
+              "RelativeToolTip": "Camera.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-02-01T07:53:32.638Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EnergyBall.cpp",
+              "DocumentMoniker": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\EnergyBall.cpp",
+              "RelativeDocumentMoniker": "EnergyBall.cpp",
+              "ToolTip": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\EnergyBall.cpp",
+              "RelativeToolTip": "EnergyBall.cpp",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAcAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-30T10:12:27.538Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Camera.cpp",
+              "DocumentMoniker": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Camera.cpp",
+              "RelativeDocumentMoniker": "Camera.cpp",
+              "ToolTip": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Camera.cpp",
+              "RelativeToolTip": "Camera.cpp",
+              "ViewState": "AgIAAH0AAAAAAAAAAAAqwJQAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-01T07:50:05.156Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "main.cpp",
+              "DocumentMoniker": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\main.cpp",
+              "RelativeDocumentMoniker": "main.cpp",
+              "ToolTip": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\main.cpp",
+              "RelativeToolTip": "main.cpp",
+              "ViewState": "AgIAAKIAAAAAAAAAAAAYwOwAAABqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-30T08:15:26.897Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "EnergyBall.h",
+              "DocumentMoniker": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\EnergyBall.h",
+              "RelativeDocumentMoniker": "EnergyBall.h",
+              "ToolTip": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\EnergyBall.h",
+              "RelativeToolTip": "EnergyBall.h",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAjwCEAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-02-01T07:58:03.187Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UI.cpp",
+              "DocumentMoniker": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\UI.cpp",
+              "RelativeDocumentMoniker": "UI.cpp",
+              "ToolTip": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\UI.cpp",
+              "RelativeToolTip": "UI.cpp",
+              "ViewState": "AgIAADgAAAAAAAAAAAAqwEwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-03T18:54:01.39Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Input.h",
+              "DocumentMoniker": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Input.h",
+              "RelativeDocumentMoniker": "Input.h",
+              "ToolTip": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Input.h",
+              "RelativeToolTip": "Input.h",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-02-05T19:05:10.294Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Stage.cpp",
+              "DocumentMoniker": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Stage.cpp",
+              "RelativeDocumentMoniker": "Stage.cpp",
+              "ToolTip": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Stage.cpp",
+              "RelativeToolTip": "Stage.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-30T08:29:59.926Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "OnAttackedPlayerHit.cpp",
+              "DocumentMoniker": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\OnAttackedPlayerHit.cpp",
+              "RelativeDocumentMoniker": "OnAttackedPlayerHit.cpp",
+              "ToolTip": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\OnAttackedPlayerHit.cpp",
+              "RelativeToolTip": "OnAttackedPlayerHit.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-05T09:45:30.26Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "OnAttackedEnemyHit.cpp",
+              "DocumentMoniker": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\OnAttackedEnemyHit.cpp",
+              "RelativeDocumentMoniker": "OnAttackedEnemyHit.cpp",
+              "ToolTip": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\OnAttackedEnemyHit.cpp",
+              "RelativeToolTip": "OnAttackedEnemyHit.cpp",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAADUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-03T17:47:53.281Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "GameManager.cpp",
+              "DocumentMoniker": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\GameManager.cpp",
+              "RelativeDocumentMoniker": "GameManager.cpp",
+              "ToolTip": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\GameManager.cpp",
+              "RelativeToolTip": "GameManager.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-04T16:45:24.241Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "EnemyAttackHitRangeChecker.cpp",
+              "DocumentMoniker": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\EnemyAttackHitRangeChecker.cpp",
+              "RelativeDocumentMoniker": "EnemyAttackHitRangeChecker.cpp",
+              "ToolTip": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\EnemyAttackHitRangeChecker.cpp",
+              "RelativeToolTip": "EnemyAttackHitRangeChecker.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-01T07:50:26.304Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "HitChecker.cpp",
+              "DocumentMoniker": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\HitChecker.cpp",
+              "RelativeDocumentMoniker": "HitChecker.cpp",
+              "ToolTip": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\HitChecker.cpp",
+              "RelativeToolTip": "HitChecker.cpp",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-05T20:53:55.37Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Input.cpp",
+              "DocumentMoniker": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Input.cpp",
+              "RelativeDocumentMoniker": "Input.cpp",
+              "ToolTip": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Input.cpp",
+              "RelativeToolTip": "Input.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-05T11:33:11.138Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "GameManager.h",
+              "DocumentMoniker": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\GameManager.h",
+              "RelativeDocumentMoniker": "GameManager.h",
+              "ToolTip": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\GameManager.h",
+              "RelativeToolTip": "GameManager.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-02-04T16:45:35.472Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "OnAttackedPlayerHit.h",
+              "DocumentMoniker": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\OnAttackedPlayerHit.h",
+              "RelativeDocumentMoniker": "OnAttackedPlayerHit.h",
+              "ToolTip": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\OnAttackedPlayerHit.h",
+              "RelativeToolTip": "OnAttackedPlayerHit.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-02-01T07:52:33.645Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "OnAttackedEnemyHit.h",
+              "DocumentMoniker": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\OnAttackedEnemyHit.h",
+              "RelativeDocumentMoniker": "OnAttackedEnemyHit.h",
+              "ToolTip": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\OnAttackedEnemyHit.h",
+              "RelativeToolTip": "OnAttackedEnemyHit.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-02-01T07:55:14.196Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Effect.cpp",
+              "DocumentMoniker": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Effect.cpp",
+              "RelativeDocumentMoniker": "Effect.cpp",
+              "ToolTip": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Effect.cpp",
+              "RelativeToolTip": "Effect.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-01T08:09:43.807Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Skydome.cpp",
+              "DocumentMoniker": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Skydome.cpp",
+              "RelativeDocumentMoniker": "Skydome.cpp",
+              "ToolTip": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Skydome.cpp",
+              "RelativeToolTip": "Skydome.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-03T16:27:09.251Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Skydome.h",
+              "DocumentMoniker": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Skydome.h",
+              "RelativeDocumentMoniker": "Skydome.h",
+              "ToolTip": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\Skydome.h",
+              "RelativeToolTip": "Skydome.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-02-03T16:27:06.505Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "EnemyAttackRangeChecker.h",
+              "DocumentMoniker": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\EnemyAttackRangeChecker.h",
+              "RelativeDocumentMoniker": "EnemyAttackRangeChecker.h",
+              "ToolTip": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\EnemyAttackRangeChecker.h",
+              "RelativeToolTip": "EnemyAttackRangeChecker.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-02-01T07:50:16.515Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "HitChecker.h",
+              "DocumentMoniker": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\HitChecker.h",
+              "RelativeDocumentMoniker": "HitChecker.h",
+              "ToolTip": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\HitChecker.h",
+              "RelativeToolTip": "HitChecker.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-02-01T07:55:15.856Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Effekseer.h",
+              "DocumentMoniker": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\EffekseerForDXLib.h\\Effekseer.h",
+              "RelativeDocumentMoniker": "EffekseerForDXLib.h\\Effekseer.h",
+              "ToolTip": "E:\\Yuizemi\\2025Production\\2025ProductionExhibition\\RoboAction\\EffekseerForDXLib.h\\Effekseer.h",
+              "RelativeToolTip": "EffekseerForDXLib.h\\Effekseer.h",
+              "ViewState": "AgIAAGoGAAAAAAAAAAAIwHoGAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-30T08:34:27.892Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 109,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

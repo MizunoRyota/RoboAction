@@ -1,0 +1,5 @@
+﻿  main.cpp
+E:\Yuizemi\2025Production\2025ProductionExhibition\RoboAction\Camera.h(30,39): warning C4305: '初期化中': 'double' から 'const float' へ切り詰めます。
+  (ソース ファイル 'main.cpp' をコンパイルしています)
+  
+  MyDxLibGame3D.vcxproj -> E:\Yuizemi\2025Production\2025ProductionExhibition\RoboAction\Debug\MyDxLibGame3D.exe
