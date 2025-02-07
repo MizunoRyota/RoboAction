@@ -23,6 +23,7 @@ Player::Player()
     , isSecondAttack(false)
     , isThirdAttack(false)
 	, isDecreaseHp(false)
+    ,isMoveStick(false)
     , ShadowRad(0.3f)
     , playTime(0)
     , prevPlayAnim(-1)
@@ -87,6 +88,7 @@ void Player::Load()
 	isSecondAttack = false;
 	isThirdAttack = false;
 	isDecreaseHp = false;
+    isMoveStick = false;
 	playTime = 0;
 	prevPlayAnim = -1;
 	time = 0;
@@ -180,7 +182,10 @@ void Player::PlayOnplayer()
 
 void Player::PlaySlash()
 {
-    PlaySoundMem(SlashHandle, DX_PLAYTYPE_BACK, true);           //kettei
+    if (!isAttack && !isMoveStick)
+    {
+        PlaySoundMem(SlashHandle, DX_PLAYTYPE_BACK, true);           //kettei
+    }
 }
 
 bool Player::BeAttacked(const OnAttackedPlayer& onattacked)
@@ -270,24 +275,23 @@ void Player::UpdateEffect()
         // DXライブラリのカメラとEffekseerのカメラを同期する。
         Effekseer_Sync3DSetting();
 
-        // 定期的にエフェクトを再生する
-            // エフェクトを再生する。
-        if (isFirstAttack && !isSecondAttack && !isThirdAttack)
-        {
-            playingEffectHandle = PlayEffekseer3DEffect(AttackHandle);
-        }
-        else if (isFirstAttack && isSecondAttack && !isThirdAttack)
-        {
-            playingEffectHandle = PlayEffekseer3DEffect(SecondAttackHandle);
-        }
-        else if (isFirstAttack && isSecondAttack && isThirdAttack)
-        {
-            playingEffectHandle = PlayEffekseer3DEffect(ThirdAttackHandle);
-        }
-        if (time % 60 == 0)
-        {
+ 
             StopEffekseer3DEffect(playingEffectHandle);
-        }
+            // 定期的にエフェクトを再生する
+                // エフェクトを再生する。
+            if (isFirstAttack && !isSecondAttack && !isThirdAttack)
+            {
+                playingEffectHandle = PlayEffekseer3DEffect(AttackHandle);
+            }
+            else if (isFirstAttack && isSecondAttack && !isThirdAttack)
+            {
+                playingEffectHandle = PlayEffekseer3DEffect(SecondAttackHandle);
+            }
+            else if (isFirstAttack && isSecondAttack && isThirdAttack)
+            {
+                playingEffectHandle = PlayEffekseer3DEffect(ThirdAttackHandle);
+            }
+        
 
         // Effekseerにより再生中のエフェクトを更新する。
         UpdateEffekseer3D();
@@ -368,9 +372,17 @@ void Player::UpdateTutorial(const Input& input, const OnAttackedPlayer& onattack
     VECTOR	leftMoveVec;	// 方向ボタン「←」を入力をしたときのプレイヤーの移動方向ベクトル
     State prevState = currentState;
     // ゲーム状態変化
+        //// ぼたんおしたら
+    clsDx();
+    printfDx("xpos%f\n", position.x);
+    printfDx("ypos%f\n", position.y);
+    printfDx("zpos%f\n", position.z);
+    printfDx("currentState%d\n", currentState);
+    printfDx("prevState%d\n", prevState);
+    printfDx("isAttack%d\n", isAttack);
+    printfDx("isOnAttack%d\n", isOnAttack);
+    printfDx("isDecreaseHp%d\n", isDecreaseHp);
 
-    BeAttacked(onattacked);
-    DecreaseHp();
     currentState = UpdateMoveParameterWithPad(input, moveVec, camera, leftMoveVec, upMoveVec);
 
     // アニメーションステートの更新
@@ -597,7 +609,8 @@ Player::State Player::UpdateMoveParameterWithPad(const Input& input, VECTOR& mov
       moveVec = VGet(0.0f, 0.0f, 0.0f);
 
     // 移動したかどうかのフラグを初期状態では「移動していない」を表すFALSEにする
-    bool isMoveStick = false;
+    isMoveStick = false;
+
     if (!isAttack && currentState != State::TakeDamage && (input.GetNowFrameInput() & PAD_INPUT_D) == 0)
     {
         // 方向ボタン「←」が入力されたらカメラの見ている方向から見て左方向に移動する

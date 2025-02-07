@@ -20,3 +20,8 @@ void Effect::Draw()
 	// Effekseerにより再生中のエフェクトを描画する。
 	DrawEffekseer3D();
 }
+
+void Effect::StopDraw()
+{
+	DrawEffekseer3D_End();
+}

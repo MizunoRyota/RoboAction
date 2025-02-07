@@ -18,6 +18,7 @@ UI::UI()
 	, HowToPlay(false)
 	, ChosePlay(true)
 	, GameOverHandle(0)
+	, LessonHandle(0)
 {
 }
 
@@ -46,6 +47,8 @@ void UI::Load()
 	GameOverHandle = LoadGraph("data/Ui/Texture/GameOver2.png");
 	TutorialHandle = LoadGraph("data/Ui/Texture/Tutorial2.png");
 	GameClearHandle = LoadGraph("data/Ui/Texture/GameClear2.png");
+	LessonHandle = LoadGraph("data/Ui/Texture/Lesson2.png");
+
 }
 
 void UI::UpdateTitle(Input& input)
@@ -101,8 +104,6 @@ void UI::DrawGame(const Input& input)
 	//DrawGraph(1400, 650, YHandle, TRUE);
 }
 
-
-
 void UI::DrawGameOver()
 {
 	DrawGraph(0, 0, GameOverHandle, true);
@@ -112,6 +113,11 @@ void UI::DrawTutorial()
 {
 	DrawGraph(0, 0, TutorialHandle, true);
 }	
+
+void UI::DrawLesson()
+{
+	DrawGraph(0, 0, LessonHandle, true);
+}
 
 void UI::DrawGameClear()
 {

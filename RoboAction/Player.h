@@ -78,7 +78,7 @@ private:
 	static constexpr float playAnimSpeed = 0.75f;		//アニメーションを進める速度
 	static constexpr float	AngleSpeed = 0.6f;		// 角度変化速度
 	static constexpr float	MoveSpeed = 0.35f;		// 移動速度
-	static constexpr float	AttackSpeed = 1.0f;		// 移動速度
+	static constexpr float	AttackSpeed = 1.5f;		// 移動速度
 
 	Sound* sound;
 
@@ -103,7 +103,7 @@ private:
 	bool isFirstAttack; 
 	bool isSecondAttack;
 	bool isThirdAttack;
-
+	bool isMoveStick;
 	//アニメーションに関するメンバ変数
 	State currentState;				//現在のアニメーションの状態
 	//AttackAnimKind currentAttack;	//現在の攻撃アニメーションの状態

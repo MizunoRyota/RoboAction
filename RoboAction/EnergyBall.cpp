@@ -14,7 +14,7 @@ Energy::Energy()
 	, limitRange(15.0f)
 	, isBlowAway(false)
 	, isDrop(false)
-    , ShadowRad(1.0f)
+    , ShadowRad(0.75f)
 	, moveSpeed(0.4f)
 	, dropTime(0)
     , time(0)
@@ -169,8 +169,8 @@ void Energy::UpdateEffect()
 
 void Energy::UpdateShadow()
 {
-    shadowToppos = VGet(position.x, -0.8, position.z);
-    shadowBottompos = VGet(position.x, -0.6, position.z);
+    shadowToppos = VGet(position.x, -0.01, position.z);
+    shadowBottompos = VGet(position.x, 0, position.z);
 }
 
 void Energy::DrawShadow()
@@ -180,4 +180,8 @@ void Energy::DrawShadow()
 
 void Energy::Draw()
 {
+    if (isBallSporn)
+    {
+        DrawShadow();
+    }
 }

@@ -24,7 +24,7 @@ enum STATE
 	STATE_TITLE,		//タイトル.
 	STATE_READY,        //準備
 	STATE_TUTORIAL,     //準備
-	STATE_COUNTDOWN,	//ゲームが始まるまでのカウント
+	STATE_LESSON,		//ゲームが始まるまでのカウント
 	STATE_GAME,			//ゲーム中.
 	STATE_READYGAMEOVER,//やられている状態
 	STATE_READYCLEAR,	//クリア状態
@@ -128,6 +128,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 			//全ての初期化
 			if (gameStatus == STATE_LOAD)
 			{
+				//effect->StopDraw();
 				sound->Delete();
 				stage->Load();
 				sound->Load();
@@ -182,7 +183,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				//描画
 
 				// ゲーム状態変化
-				gameStatus = STATE_COUNTDOWN;
+				gameStatus = STATE_LESSON;
 			}
 			//チュートリアル画面
 			if (gameStatus == STATE_TUTORIAL)
@@ -209,9 +210,24 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				}
 			}
 			//ゲームが始まるまでのカウントダウン
-			if (gameStatus == STATE_COUNTDOWN)
+			if (gameStatus == STATE_LESSON)
 			{
-				gameStatus = STATE_GAME;
+				input->Update();
+				camera->Update(*player, *input, *enemy, *static_cast<const EnemyAttackRangeChecker*>(hitchecker[1]));
+				ClearDrawScreen();
+				//描画
+				dome->SkydomeDraw();
+				stage->Draw();
+				player->Draw();
+				enemy->Draw();
+				ui->DrawLesson();
+				if ((input->GetNowFrameInput() & PAD_INPUT_C) != 0 || CheckHitKey(KEY_INPUT_SPACE))
+				{
+					sound->PlayDecide();
+					ClearDrawScreen();
+					WaitTimer(80);
+					gameStatus = STATE_GAME;
+				}
 			}
 
 			//ゲーム中
@@ -303,8 +319,10 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				gameManager->FadeOutToWhite(2000);
 				stage->Update();
 				enemy->ChangeMotion(Enemy::AnimKind::Die);
+				enemy->UpdateShadow();
 				dome->SkydomeUpdate();
 				camera->GameEnd(*enemy);
+
 				ClearDrawScreen();
 
 				dome->SkydomeDraw();

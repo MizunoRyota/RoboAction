@@ -76,7 +76,7 @@ private:
 	static constexpr float AnimBlendSpeed = 0.1f;	// アニメーションのブレンド率変化速度
 	static constexpr float	AngleSpeed = 0.6f;		// 角度変化速度
 	static constexpr float Scale = 0.04f;			//大きさ
-	static constexpr float OnMoveSpeed = 0.5;				// 移動速度
+	static constexpr float OnMoveSpeed = 0.7;				// 移動速度
 
 	//Enemy自身に関するメンバ変数
 	VECTOR angleVector;				//方向

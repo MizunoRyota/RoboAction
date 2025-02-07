@@ -10,6 +10,7 @@ public:
 	void UpdateTitle(Input& input);
 	void UpdateGameOver();
 	void DrawTitle();
+	void DrawLesson();
 	void DrawTutorial();
 	void DrawGame(const Input& input);
 	void DrawGameOver();
@@ -34,5 +35,6 @@ private:
 	bool HowToPlay;
 	int GameOverHandle;
 	int GameClearHandle;
+	int LessonHandle;
 };
 

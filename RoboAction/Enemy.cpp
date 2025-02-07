@@ -317,6 +317,10 @@ void Enemy::DecreaseHp(const OnAttackedEnemy& onAttacked)
 		isDecreaseHp = true;
 		hp--;
 	}
+	else if (hp == 5)
+	{
+		MoveSpeed = 0.25f;
+	}
 	if (hp == 4 && HpGaugeWidth >= 1350)
 	{
 		MoveSpeed = 0.30f;
@@ -354,6 +358,7 @@ void Enemy::UpdateEffect(const OnAttackedEnemy& onAttacked)
 		// エフェクトを再生する。
 		if (time % 60 == 0)
 		{
+
 			StopEffekseer3DEffect(playingEffectHandle);
 			if (isAttack)
 			{
@@ -361,11 +366,11 @@ void Enemy::UpdateEffect(const OnAttackedEnemy& onAttacked)
 				{
 					playingEffectHandle = PlayEffekseer3DEffect(BoostDashHandleFhase1);
 				}
-				else if (hp==4)
+				else if (hp == 4)
 				{
 					playingEffectHandle = PlayEffekseer3DEffect(BoostDashHandleFhase2);
 				}
-				else if (hp==3)
+				else if (hp == 3)
 				{
 					playingEffectHandle = PlayEffekseer3DEffect(BoostDashHandleFhase3);
 				}
@@ -398,6 +403,7 @@ void Enemy::UpdateEffect(const OnAttackedEnemy& onAttacked)
 	}
 	else
 	{
+		StopEffekseer3DEffect(playingEffectHandle);
 		isExplosion = false;
 		time = 0.0f;
 	}
@@ -411,8 +417,8 @@ void Enemy::Update(const Player& player, const EnemyAttackRangeChecker& attackRa
 	//疲れている状態の制限時間更新処理
 	TireTimer();
 
-	if (CheckHitKey(KEY_INPUT_R))
-	{
+	//if (CheckHitKey(KEY_INPUT_R))
+	//{
 		clsDx();
 		printfDx("xpos%f\n", position.x);
 		printfDx("ypos%f\n", position.y);
@@ -426,7 +432,7 @@ void Enemy::Update(const Player& player, const EnemyAttackRangeChecker& attackRa
 		printfDx("limitRange%d\n", islimitRange);
 		printfDx("ChaseCount%d\n", chaseCount);
 		printfDx("isShortAttack%d\n", isShortAttack);
-	}
+	//}
 	if (CheckHitKey(KEY_INPUT_T))
 	{
 		hp = 0;
@@ -455,10 +461,9 @@ void Enemy::Update(const Player& player, const EnemyAttackRangeChecker& attackRa
 	MV1SetPosition(EnemyHandle, position);
 }
 
-
 void Enemy::MoveOnAttack(const OnAttackedEnemy& onAttacked)
 {
-	if (onAttacked.GetisOnAttack() && !islimitRange && !isAttack)
+	if (onAttacked.GetisOnAttack() && currentState == State::TireIdol)
 	{
 		PlayOnenemy();
 		onAttack = true;
@@ -520,7 +525,7 @@ Enemy::State Enemy::UpdateEnemyState(const EnemyAttackRangeChecker& attackRange,
 		//状態フラグが疲れているとき状態をtireIdolにする
 		nextState = State::TireIdol;
 	}
-	if (onAttacked.GetisOnAttack()&&currentState!=State::OnAttack)
+	if (onAttacked.GetisOnAttack()&&currentState==State::TireIdol)
 	{
 		nextState = State::OnAttack;
 	}

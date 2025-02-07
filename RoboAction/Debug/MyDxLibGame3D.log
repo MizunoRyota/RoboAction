@@ -1,5 +1,51 @@
-﻿  main.cpp
+﻿  Camera.cpp
+E:\Yuizemi\2025Production\2025ProductionExhibition\RoboAction\Camera.h(30,39): warning C4305: '初期化中': 'double' から 'const float' へ切り詰めます。
+  (ソース ファイル 'Camera.cpp' をコンパイルしています)
+  
+E:\Yuizemi\2025Production\2025ProductionExhibition\RoboAction\Enemy.h(79,39): warning C4305: '初期化中': 'double' から 'const float' へ切り詰めます。
+  (ソース ファイル 'Camera.cpp' をコンパイルしています)
+  
+  Enemy.cpp
+E:\Yuizemi\2025Production\2025ProductionExhibition\RoboAction\Enemy.h(79,39): warning C4305: '初期化中': 'double' から 'const float' へ切り詰めます。
+  (ソース ファイル 'Enemy.cpp' をコンパイルしています)
+  
+E:\Yuizemi\2025Production\2025ProductionExhibition\RoboAction\Enemy.cpp(201,27): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+E:\Yuizemi\2025Production\2025ProductionExhibition\RoboAction\Enemy.cpp(221,29): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+E:\Yuizemi\2025Production\2025ProductionExhibition\RoboAction\Enemy.cpp(406,10): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+E:\Yuizemi\2025Production\2025ProductionExhibition\RoboAction\Enemy.cpp(698,28): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  EnemyAttackHitRangeChecker.cpp
+E:\Yuizemi\2025Production\2025ProductionExhibition\RoboAction\Enemy.h(79,39): warning C4305: '初期化中': 'double' から 'const float' へ切り詰めます。
+  (ソース ファイル 'EnemyAttackHitRangeChecker.cpp' をコンパイルしています)
+  
+  EnergyBall.cpp
+E:\Yuizemi\2025Production\2025ProductionExhibition\RoboAction\Enemy.h(79,39): warning C4305: '初期化中': 'double' から 'const float' へ切り詰めます。
+  (ソース ファイル 'EnergyBall.cpp' をコンパイルしています)
+  
+E:\Yuizemi\2025Production\2025ProductionExhibition\RoboAction\EnergyBall.cpp(89,35): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+E:\Yuizemi\2025Production\2025ProductionExhibition\RoboAction\EnergyBall.cpp(172,37): warning C4305: '引数': 'double' から 'float' へ切り詰めます。
+  HitChecker.cpp
+E:\Yuizemi\2025Production\2025ProductionExhibition\RoboAction\Enemy.h(79,39): warning C4305: '初期化中': 'double' から 'const float' へ切り詰めます。
+  (ソース ファイル 'HitChecker.cpp' をコンパイルしています)
+  
+  OnAttackedEnemyHit.cpp
+E:\Yuizemi\2025Production\2025ProductionExhibition\RoboAction\Enemy.h(79,39): warning C4305: '初期化中': 'double' から 'const float' へ切り詰めます。
+  (ソース ファイル 'OnAttackedEnemyHit.cpp' をコンパイルしています)
+  
+E:\Yuizemi\2025Production\2025ProductionExhibition\RoboAction\OnAttackedEnemyHit.cpp(59,6): warning C4804: '<=': 演算中の 'bool' 型の使用方法が安全ではありません
+  OnAttackedPlayerHit.cpp
+E:\Yuizemi\2025Production\2025ProductionExhibition\RoboAction\Enemy.h(79,39): warning C4305: '初期化中': 'double' から 'const float' へ切り詰めます。
+  (ソース ファイル 'OnAttackedPlayerHit.cpp' をコンパイルしています)
+  
+E:\Yuizemi\2025Production\2025ProductionExhibition\RoboAction\OnAttackedPlayerHit.cpp(53,9): warning C4804: '<=': 演算中の 'bool' 型の使用方法が安全ではありません
+  main.cpp
 E:\Yuizemi\2025Production\2025ProductionExhibition\RoboAction\Camera.h(30,39): warning C4305: '初期化中': 'double' から 'const float' へ切り詰めます。
   (ソース ファイル 'main.cpp' をコンパイルしています)
   
+E:\Yuizemi\2025Production\2025ProductionExhibition\RoboAction\Enemy.h(79,39): warning C4305: '初期化中': 'double' から 'const float' へ切り詰めます。
+  (ソース ファイル 'main.cpp' をコンパイルしています)
+  
+  コードを生成中...
+E:\Yuizemi\2025Production\2025ProductionExhibition\RoboAction\OnAttackedPlayerHit.cpp(57,1): warning C4715: 'OnAttackedPlayer::CheckBeAttackHit': 値を返さないコントロール パスがあります。
+E:\Yuizemi\2025Production\2025ProductionExhibition\RoboAction\OnAttackedEnemyHit.cpp(86,1): warning C4715: 'OnAttackedEnemy::CheckOnBallHit': 値を返さないコントロール パスがあります。
+E:\Yuizemi\2025Production\2025ProductionExhibition\RoboAction\OnAttackedEnemyHit.cpp(63,1): warning C4715: 'OnAttackedEnemy::CheckOnAttackHit': 値を返さないコントロール パスがあります。
   MyDxLibGame3D.vcxproj -> E:\Yuizemi\2025Production\2025ProductionExhibition\RoboAction\Debug\MyDxLibGame3D.exe
