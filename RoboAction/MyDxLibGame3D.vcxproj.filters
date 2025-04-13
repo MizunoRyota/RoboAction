@@ -17,9 +17,6 @@
     <Filter Include="ソース ファイル\MyLib">
       <UniqueIdentifier>{a7470f37-c5c2-41b7-b850-d52ad8defc41}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Attack">
-      <UniqueIdentifier>{43df40af-9abd-4eb4-892a-faa1097b8f17}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Color.cpp">
@@ -76,6 +73,12 @@
     <ClCompile Include="Sound.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="Gimmick.cpp">
+      <Filter>Environment</Filter>
+    </ClCompile>
+    <ClCompile Include="OnGimmick.cpp">
+      <Filter>HitChecks</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Pallet.h">
@@ -131,6 +134,12 @@
     </ClInclude>
     <ClInclude Include="Sound.h">
       <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Gimmick.h">
+      <Filter>Environment</Filter>
+    </ClInclude>
+    <ClInclude Include="OnGimmick.h">
+      <Filter>HitChecks</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

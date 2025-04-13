@@ -3,6 +3,7 @@
 class Input;
 class Camera;
 class OnAttackedPlayer;
+class OnGimmick;
 class Sound;
 
 class Player
@@ -45,13 +46,13 @@ public:
 	void Initialize();	//初期化
 	void PlayOnplayer();
 	void PlaySlash();
-	void Update(const Input& input, const OnAttackedPlayer& onattacked, const Camera& camera, const Sound& sound);  //更新
+	void Update(const Input& input, const OnAttackedPlayer& onattacked, const OnGimmick& gimmick, const Camera& camera, const Sound& sound);  //更新
 	void UpdateTitle();
 	void UpdateTutorial(const Input& input, const OnAttackedPlayer& onattacked, const Camera& camera);		//ゲーム画面更新
 	void UpdateGameOver();
-	void UpdateGameClear();	
+	void UpdateGameClear();
 	State UpdateMoveParameterWithPad(const Input& input, VECTOR& moveVec, const Camera& camera, VECTOR& upMoveVec, VECTOR& leftMoveVec);//パッドの入力更新
-	bool BeAttacked(const OnAttackedPlayer& onattacked);
+	bool BeAttacked(const OnAttackedPlayer& onattacked, const OnGimmick& gimmick);
 	void Move(VECTOR& moveVec);
 	void DecreaseHp();			//Hpの減少
 	void UpdateEffect();		//エフェクトの更新
@@ -59,26 +60,32 @@ public:
 	void UpdateAngle();
 	void LimitRange();
 	void InvincibleTimer();
+	void DownSpeedTimer();
 	void DrawTexture();											//テクスチャの描画
 	void DrawShadow();		//プレイヤーの影の描画
 	void Draw();				//描画
+	void ChangeSpeed(const OnGimmick& gimmick);
+	void UpdateSpeedDownEffect();
 	// モデルハンドルの取得.
 	const VECTOR& GetPos() const { return position; }
 	const VECTOR& GetDirection() const { return targetMoveDirection; }
 	const bool& GetisIsAttack() const { return isAttack; }
 	const bool& GetisOnAttack() const { return isOnAttack; }
+	const bool& GetisSpeedDown() const { return speedDown; }
+
 	const int& GetHp() const { return hp; }
 private:
 	// 静的定数.
 	//プレイヤー自身に関するメンバ静的定数
 	static constexpr float Scale = 0.006f;		//大きさ
 	//アニメーションに関するメンバ静的定数
-	static constexpr float playAttackAnimSpeed = 0.50f;		//アニメーションを進める速度
+	static constexpr float playAttackAnimSpeed = 0.25f;		//アニメーションを進める速度
 	static constexpr float AnimBlendSpeed = 0.1f;	// アニメーションのブレンド率変化速度
-	static constexpr float playAnimSpeed = 0.75f;		//アニメーションを進める速度
+	static constexpr float playAnimSpeed = 0.15f;		//アニメーションを進める速度
 	static constexpr float	AngleSpeed = 0.6f;		// 角度変化速度
-	static constexpr float	MoveSpeed = 0.35f;		// 移動速度
-	static constexpr float	AttackSpeed = 1.5f;		// 移動速度
+	static constexpr float	AttackSpeed = 0.25f;		// 移動速度
+	static constexpr float	DownSpeed = 0.02f;		// 移動速度
+	static constexpr float	MoveSpeed = 0.075f;		// 移動速度
 
 	Sound* sound;
 
@@ -90,17 +97,19 @@ private:
 	bool isOnAttack;					// プレイヤーが攻撃を受けたかどうか	
 	bool isAttack;						// プレイヤーが攻撃中かどうか
 	bool isDecreaseHp;					// プレイヤーがHpを減少させたかどうか
+	bool speedDown;						// プレイヤーがスピードダウン状態かどうか
 	float isInvincible;					// プレイヤーが無敵状態かどうか
 	float returnRange;					//最大移動距離
 	float invincible;					//無敵時間
 	float angle;						// 角度
 	int alpha;							// 透明度
+	float speedDownTime;				//スピードダウン時間
 	//HP
 	int HpGauge;
 	float HpGaugeWidth;
 	int EnptyHpGuage;
 	//プレイヤーの攻撃に関するメンバ変数
-	bool isFirstAttack; 
+	bool isFirstAttack;
 	bool isSecondAttack;
 	bool isThirdAttack;
 	bool isMoveStick;
@@ -126,7 +135,7 @@ private:
 	void ChangeMotion(AnimKind  motionNum);					//モーション変更
 	void ResetMotion(State prevState);						//モーションリセット
 	void UpdateAttack();									//攻撃更新
-	 
+
 	//エフェクトに関するメンバ変数
 
 	static constexpr float EffektScale = 10.0f;		//大きさ
@@ -145,4 +154,13 @@ private:
 	int OnPlayerHandle;			//プレイヤーのモデルハンドル
 	int SlashHandle;			//スラッシュエフェクトハンドル	
 
+	int FoggyGraph;
+	int FoggyHandle;
+	int SpeedEffectHandle;
+	float FoggyAngle;
+	int DownArrowGraph;
+	float ArrowPosY;
+	float alphaNum;
+	bool isAlpha;
+	int bootsHandle;
 };

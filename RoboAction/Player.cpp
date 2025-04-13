@@ -7,6 +7,7 @@
 #include"Player.h"
 #include"Input.h"
 #include"OnAttackedPlayerHit.h"
+#include"OnGimmick.h"
 Player::Player()
     :position(VGet(0.0f, 0.0f, 0.0f))
     , shadowBottompos(VGet(0.0f, 0.0f, 0.0f))
@@ -22,12 +23,12 @@ Player::Player()
     , isFirstAttack(false)
     , isSecondAttack(false)
     , isThirdAttack(false)
-	, isDecreaseHp(false)
-    ,isMoveStick(false)
+    , isDecreaseHp(false)
+    , isMoveStick(false)
     , ShadowRad(0.3f)
     , playTime(0)
     , prevPlayAnim(-1)
-	, HpGaugeWidth(450)
+    , HpGaugeWidth(450)
     , prevPlayTime(0)
     , PlayAnim(-1)
     , time(0)
@@ -37,13 +38,23 @@ Player::Player()
     , AttackHandle(0)
     , SecondAttackHandle(0)
     , ThirdAttackHandle(0)
-	, HpGauge(0)
-	, EnptyHpGuage(0)
-	, AttachIndex(0)
-	, AnimTime(0)
-	, hp(3)
+    , HpGauge(0)
+    , EnptyHpGuage(0)
+    , AttachIndex(0)
+    , AnimTime(0)
+    , hp(3)
     , OnPlayerHandle(0)
     , SlashHandle(0)
+    , speedDown(false)
+    , speedDownTime(0)
+    , FoggyGraph(0)
+    , FoggyHandle(0)
+    , SpeedEffectHandle(0)
+    , FoggyAngle(0)
+    , ArrowPosY(0)
+    , alphaNum(0)
+    , isAlpha(false)
+    , bootsHandle(0)
 {
     // 処理なし
 }
@@ -60,7 +71,9 @@ void Player::Load()
     //
     HpGauge = LoadGraph("data/Ui/Texture/PlayerHp1.png");
     EnptyHpGuage = LoadGraph("data/Ui/Texture/EnptyPlayerHp2.png");
-
+    FoggyGraph = LoadGraph("data/Ui/Texture/Foggy4.png");
+    DownArrowGraph = LoadGraph("data/Ui/Texture/SpeedDown2.png");
+    bootsHandle = LoadGraph("data/Ui/Texture/boots.png");
     OnPlayerHandle = LoadSoundMem("data/sound/Onplayer.mp3");
     SlashHandle = LoadSoundMem("data/sound/Slash.mp3");
 
@@ -68,7 +81,7 @@ void Player::Load()
     AttackHandle = LoadEffekseerEffect("data/effekseer/EfkFile/Attack1.efkefc", 1.0f);
     SecondAttackHandle = LoadEffekseerEffect("data/effekseer/EfkFile/PlayerSecondAttack.efkefc", 0.750f);
     ThirdAttackHandle = LoadEffekseerEffect("data/effekseer/EfkFile/PlayerThirdAttack.efkefc", 0.750f);
-
+    FoggyHandle = LoadEffekseerEffect("data/effekseer/EfkFile/SpeedDown.efkefc", 0.50f);
     SetScalePlayingEffekseer3DEffect(AttackHandle, EffektScale, EffektScale, EffektScale);
     SetScalePlayingEffekseer3DEffect(SecondAttackHandle, EffektScale, EffektScale, EffektScale);
     SetScalePlayingEffekseer3DEffect(ThirdAttackHandle, EffektScale, EffektScale, EffektScale);
@@ -98,8 +111,7 @@ void Player::Load()
     animBlendRate = 1.0f;
 	PlayAnim = -1;
 	HpGaugeWidth = 450;
-	hp = 3;
-
+	hp = 5;
 
     // 3Dモデルのスケール決定
     MV1SetScale(PlayerHandle, VGet(Scale, Scale, Scale));
@@ -124,10 +136,6 @@ void Player::Initialize()
     AttackHandle = LoadEffekseerEffect("data/effekseer/EfkFile/Attack1.efkefc", 1.0f);
     SecondAttackHandle = LoadEffekseerEffect("data/effekseer/EfkFile/PlayerSecondAttack.efkefc", 0.750f);
     ThirdAttackHandle = LoadEffekseerEffect("data/effekseer/EfkFile/PlayerThirdAttack.efkefc", 0.750f);
-
-    //SetScalePlayingEffekseer3DEffect(AttackHandle, EffektScale, EffektScale, EffektScale);
-    //SetScalePlayingEffekseer3DEffect(SecondAttackHandle, EffektScale, EffektScale, EffektScale);
-    //SetScalePlayingEffekseer3DEffect(ThirdAttackHandle, EffektScale, EffektScale, EffektScale);
 
     //値の初期化
     position = VGet(0.0f, 0.0f, 0.0f);
@@ -173,6 +181,7 @@ void Player::Initialize()
     PlayAnim = -1;
     animBlendRate = 1.0f;
     HpGaugeWidth = 450;
+	speedDown = false;
 }
 
 void Player::PlayOnplayer()
@@ -188,7 +197,7 @@ void Player::PlaySlash()
     }
 }
 
-bool Player::BeAttacked(const OnAttackedPlayer& onattacked)
+bool Player::BeAttacked(const OnAttackedPlayer& onattacked, const OnGimmick& gimmick)
 {
     if (onattacked.GetisOnAttack() && !isDecreaseHp)
     {
@@ -201,23 +210,41 @@ bool Player::BeAttacked(const OnAttackedPlayer& onattacked)
     {
         isOnAttack = false;
     }
+
     return 0;
+}
+
+void  Player::ChangeSpeed(const OnGimmick& gimmick)
+{
+    if (gimmick.GetisOnGimmick() && speedDown == false)
+    {
+        speedDown = true;
+    }
 }
 
 void Player::DecreaseHp()
 {
-    if (hp==2&&HpGaugeWidth>=325)
-    {
-		HpGaugeWidth -= 2;
-	}
-    else if (hp == 1 && HpGaugeWidth >= 225)
+
+    if (hp == 4 && HpGaugeWidth >= 380)
     {
         HpGaugeWidth -= 2;
     }
-	else if (hp == 0 && HpGaugeWidth >= 100)
-	{
-		HpGaugeWidth -= 2;
-	}
+    else if (hp == 3 && HpGaugeWidth >= 310)
+    {
+        HpGaugeWidth -= 2;
+    }
+    else if (hp == 2 && HpGaugeWidth >= 240)
+    {
+        HpGaugeWidth -= 2;
+    }
+    else if (hp == 1 && HpGaugeWidth >= 170)
+    {
+        HpGaugeWidth -= 2;
+    }
+    else if (hp == 0 && HpGaugeWidth >= 100)
+    {
+        HpGaugeWidth -= 2;
+    }
 }
 
 void Player::InvincibleTimer()
@@ -231,7 +258,7 @@ void Player::InvincibleTimer()
         }
 
         // 経過時間が3000ミリ秒(3秒)以上経過したらフラグを切り替える
-        if (GetNowCount() - isInvincible >= 2000)
+        if (GetNowCount() - isInvincible >= 2500)
         {
             isInvincible = 0;
             isDecreaseHp = false;
@@ -268,6 +295,26 @@ void Player::InvincibleTimer()
     }
 }
 
+void Player::DownSpeedTimer()
+{
+    if (speedDown)
+    {
+        // 初回の呼び出し時に開始時刻を設定
+        if (speedDownTime == 0)
+        {
+            speedDownTime = GetNowCount();  // ミリ秒単位で現在時刻を取得
+        }
+        // 経過時間が3000ミリ秒(3秒)以上経過したらフラグを切り替える
+        if (GetNowCount() - speedDownTime >= 2000)
+        {
+            speedDown = false;
+            isAlpha = false;
+            alphaNum = 0;
+			speedDownTime = 0;
+            StopEffekseer3DEffect(SpeedEffectHandle);
+        }
+    }
+}
 void Player::UpdateEffect()
 {
     if (isAttack)
@@ -275,38 +322,56 @@ void Player::UpdateEffect()
         // DXライブラリのカメラとEffekseerのカメラを同期する。
         Effekseer_Sync3DSetting();
 
- 
-            StopEffekseer3DEffect(playingEffectHandle);
-            // 定期的にエフェクトを再生する
-                // エフェクトを再生する。
-            if (isFirstAttack && !isSecondAttack && !isThirdAttack)
-            {
-                playingEffectHandle = PlayEffekseer3DEffect(AttackHandle);
-            }
-            else if (isFirstAttack && isSecondAttack && !isThirdAttack)
-            {
-                playingEffectHandle = PlayEffekseer3DEffect(SecondAttackHandle);
-            }
-            else if (isFirstAttack && isSecondAttack && isThirdAttack)
-            {
-                playingEffectHandle = PlayEffekseer3DEffect(ThirdAttackHandle);
-            }
-        
 
-        // Effekseerにより再生中のエフェクトを更新する。
-        UpdateEffekseer3D();
+        StopEffekseer3DEffect(playingEffectHandle);
+        // 定期的にエフェクトを再生する
+            // エフェクトを再生する。
+        if (isFirstAttack && !isSecondAttack && !isThirdAttack)
+        {
+            playingEffectHandle = PlayEffekseer3DEffect(AttackHandle);
+        }
+        else if (isFirstAttack && isSecondAttack && !isThirdAttack)
+        {
+            playingEffectHandle = PlayEffekseer3DEffect(SecondAttackHandle);
+        }
+        else if (isFirstAttack && isSecondAttack && isThirdAttack)
+        {
+            playingEffectHandle = PlayEffekseer3DEffect(ThirdAttackHandle);
+        }
+        if (speedDown)
+        {
+            playingEffectHandle = PlayEffekseer3DEffect(FoggyHandle);
+        }
 
         SetPosPlayingEffekseer3DEffect(playingEffectHandle, position.x, position.y + 0.2f, position.z);
         SetRotationPlayingEffekseer3DEffect(playingEffectHandle, 0.0f, angle + DX_PI_F, 0.0);
-        // 時間を経過させる。
-        time++;
     }
+}
+
+void Player::UpdateSpeedDownEffect()
+{
+    if (speedDown && time % 60 == 0)
+    {
+        // DXライブラリのカメラとEffekseerのカメラを同期する。
+        Effekseer_Sync3DSetting();
+
+        StopEffekseer3DEffect(SpeedEffectHandle);
+
+        if (speedDown)
+        {
+            SpeedEffectHandle = PlayEffekseer3DEffect(FoggyHandle);
+        }
+    }
+    SetPosPlayingEffekseer3DEffect(SpeedEffectHandle, position.x, position.y + 0.7f, position.z);
+    SetRotationPlayingEffekseer3DEffect(SpeedEffectHandle, 0.0f, angle + DX_PI_F, 0.0);
+    // 時間を経過させる。
+    time++;
 }
 
 /// <summary>
 /// 更新
 /// </summary>
-void Player::Update(const Input& input, const OnAttackedPlayer& onattacked, const Camera& camera,const Sound& sound)
+void Player::Update(const Input& input, const OnAttackedPlayer& onattacked, const OnGimmick& ongimmick, const Camera& camera,const Sound& sound)
 {
 
     // パッド入力によって移動パラメータを設定する
@@ -316,11 +381,12 @@ void Player::Update(const Input& input, const OnAttackedPlayer& onattacked, cons
     State prevState = currentState;
     // ゲーム状態変化
 
-    BeAttacked(onattacked);
+    BeAttacked(onattacked,ongimmick);
     DecreaseHp();
+    ChangeSpeed(ongimmick);
     currentState = UpdateMoveParameterWithPad(input, moveVec, camera, leftMoveVec, upMoveVec);
 
-    //// ぼたんおしたら
+    // ぼたんおしたら
     //clsDx();
     //printfDx("xpos%f\n", position.x);
     //printfDx("ypos%f\n", position.y);
@@ -328,8 +394,10 @@ void Player::Update(const Input& input, const OnAttackedPlayer& onattacked, cons
     //printfDx("currentState%d\n", currentState);
     //printfDx("prevState%d\n", prevState);
     //printfDx("isAttack%d\n", isAttack);
-    //printfDx("isOnAttack%d\n", isOnAttack);
     //printfDx("hp%d\n", hp);
+    //printfDx("isOnAttack%d\n", isOnAttack);
+    //printfDx("speedDown%d\n", speedDown);
+    //printfDx("Arrowpos%f\n", ArrowPosY);
 
     // アニメーションステートの更新
     if (input.GetNowFrameInput() & PAD_INPUT_C || CheckHitKey(KEY_INPUT_SPACE))
@@ -345,7 +413,7 @@ void Player::Update(const Input& input, const OnAttackedPlayer& onattacked, cons
     }
     if (CheckHitKey(KEY_INPUT_Y))
     {
-		hp = 0;
+        speedDown = true;
     }
     LimitRange();
 
@@ -354,7 +422,8 @@ void Player::Update(const Input& input, const OnAttackedPlayer& onattacked, cons
 
     //ポジションの更新
     Move(moveVec);
-
+    UpdateSpeedDownEffect();
+	DownSpeedTimer();
     //影の更新
     UpdateShadow();
 
@@ -680,7 +749,15 @@ Player::State Player::UpdateMoveParameterWithPad(const Input& input, VECTOR& mov
         targetMoveDirection = VNorm(moveVec);
 
         // プレイヤーが向くべき方向ベクトルをプレイヤーのスピード倍したものを移動ベクトルとする
-        moveVec = VScale(targetMoveDirection, MoveSpeed);
+
+        if (speedDown)
+        {
+            moveVec = VScale(targetMoveDirection, DownSpeed);
+        }
+        else
+        {
+            moveVec = VScale(targetMoveDirection, MoveSpeed);
+        }
 
     }
     else
@@ -824,6 +901,39 @@ void Player::DrawTexture()
     // テクスチャの描画
     DrawRectGraph(0, 0, 0, 0, 1600, 900, EnptyHpGuage, TRUE, FALSE);
     DrawRectGraph(0, 0, 0, 0, HpGaugeWidth, 900, HpGauge, TRUE, FALSE);
+
+    if (speedDown)
+    {
+        SetDrawBlendMode(DX_BLENDMODE_ALPHA, alphaNum);
+        DrawGraph(0, 0, FoggyGraph, true);
+        SetDrawBlendMode(DX_BLENDMODE_NOBLEND, alphaNum);
+        if (isAlpha)
+        {
+            alphaNum -= 4;
+            if (alphaNum <= 0)
+            {
+                isAlpha = false;
+            }
+        }
+        else
+        {
+            alphaNum += 4;
+            if (alphaNum>=255)
+            {
+                isAlpha = true;
+            }
+        }
+        DrawGraph(0, ArrowPosY, DownArrowGraph, true);
+        DrawGraph(0, 0, bootsHandle , true);
+        // 読みこんだグラフィックを回転描画
+        FoggyAngle += 0.02;
+
+        ArrowPosY += 2.0f;
+    }
+    if (ArrowPosY >= 200)
+    {
+        ArrowPosY = 0;
+    }
 }
 
 /// <summary>

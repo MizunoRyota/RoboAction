@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="Gimmick.cpp" />
     <ClCompile Include="OnAttackedEnemyHit.cpp" />
     <ClCompile Include="OnAttackedPlayerHit.cpp" />
     <ClCompile Include="Box.cpp" />
@@ -32,6 +33,7 @@
     <ClCompile Include="HitChecker.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="OnGimmick.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Skydome.cpp" />
     <ClCompile Include="Sound.cpp" />
@@ -40,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameManager.h" />
+    <ClInclude Include="Gimmick.h" />
     <ClInclude Include="OnAttackedEnemyHit.h" />
     <ClInclude Include="OnAttackedPlayerHit.h" />
     <ClInclude Include="Box.h" />
@@ -51,6 +54,7 @@
     <ClInclude Include="EnergyBall.h" />
     <ClInclude Include="HitChecker.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="OnGimmick.h" />
     <ClInclude Include="Pallet.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Skydome.h" />

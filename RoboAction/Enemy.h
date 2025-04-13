@@ -59,9 +59,9 @@ public:
 	void DrawTexture();											//テクスチャの描画
 	void DrawShadow();											//影の描画
 	void Draw();												//影の表示
-	void DrawGameOver();												//ゲームオーバーの表示
-	void UpdateGameClear();
-	void UpdateGameOver();
+	void DrawGameOver();										//ゲームオーバーの表示
+	void UpdateGameClear();										//ゲームクリア更新
+	void UpdateGameOver();										//ゲームオーバーの更新	
 	// モデルハンドルの取得.
 	const bool& GetIsExplosion() const { return isExplosion; }
 	const int& GetChaseCount() const { return chaseCount; }
@@ -69,14 +69,16 @@ public:
 	const bool& GetIsAttack() const { return isAttack; }
 	const VECTOR& GetPos() const { return position; }
 	const int& GetHp() const { return hp; }
+	const float& GetFloatAngle() const { return angle; }
 
 private:
 	//アニメーションに関するメンバ静的定数
 	static constexpr float playAnimSpeed = 0.5f;	//アニメーションを進める速度
 	static constexpr float AnimBlendSpeed = 0.1f;	// アニメーションのブレンド率変化速度
-	static constexpr float	AngleSpeed = 0.6f;		// 角度変化速度
+	static constexpr float AngleSpeed = 0.6f;		// 角度変化速度
 	static constexpr float Scale = 0.04f;			//大きさ
-	static constexpr float OnMoveSpeed = 0.7;				// 移動速度
+	static constexpr float OnMoveSpeed = 1.5;		// 移動速度
+	static constexpr float ChargeAnimSpeed = 0.35;	
 
 	//Enemy自身に関するメンバ変数
 	VECTOR angleVector;				//方向
@@ -85,21 +87,23 @@ private:
 	float angle;					//角度
 	int hp;							//体力
 	float MoveSpeed;				// 移動速度
+	//2/14追加
+	bool isOnAttack;
 	//Enemyの攻撃に関するメンバ変数
-	bool isShortAttack;
-	bool isDecreaseHp;
-	bool islimitRange;
-	bool isExplosion;
-	bool isChasing;
-	bool onAttack;
-	bool isAttack;
-	bool isCharge;
-	bool isTurn;
-	bool tire;
-	float attackTimer;
-	float returnRange;
-	float tireTimer;
-	int chaseCount;
+	bool isShortAttack;		//
+	bool isDecreaseHp;		//
+	bool islimitRange;		//
+	bool isExplosion;		//
+	bool isChasing;		//
+	bool onAttack;		//
+	bool isAttack;		//
+	bool isCharge;		//
+	bool isTurn;		//
+	bool tire;		//
+	float attackTimer;		//
+	float returnRange;		//
+	float tireTimer;		//
+	int chaseCount;			//
 	//アニメーションに関するメンバ変数
 	State currentState;				//現在のアニメーションの状態
 	float playTime;					//アニメーションの時間の合計
@@ -121,22 +125,23 @@ private:
 
 	int playingEffectHandle = -1;	// 再生中のエフェクトのハンドルを初期化する。
 	int ExplosionHandle;			//疲れハンドル
-	int BoostDashHandleFhase1;
-	int BoostDashHandleFhase2;
-	int BoostDashHandleFhase3;
-	int BoostDashHandleFhase4;
-	int BoostDashHandleFhase5;
+	int BoostDashHandleFhase1;		//
+	int BoostDashHandleFhase2;		//
+	int BoostDashHandleFhase3;		//
+	int BoostDashHandleFhase4;		//
+	int BoostDashHandleFhase5;		//
 
-	int TireHandle;
-	int time;						// 時間を初期化する(定期的にエフェクトを再生するため)
+	int TireHandle;					//
+	int ChargeHandle;				//	
+	int time;						//時間を初期化する(定期的にエフェクトを再生するため)
 
 	//HP
-	int HpGauge;
-	float HpGaugeWidth;
-	int EnptyHpGauge;
+	int HpGauge;					//
+	float HpGaugeWidth;				//
+	int EnptyHpGauge;				//
 
-	int ExplosionSEHandle;
-	int OnenemyHandle;
+	int ExplosionSEHandle;			//
+	int OnenemyHandle;				//
 
 };
 

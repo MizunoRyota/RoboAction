@@ -1,8 +1,3 @@
-D:\ゆいぜみ\school\2024ゆいゼミ\3DActionGame1\ActionGame1\Debug\MyDxLibGame3D.exe
-D:\ゆいぜみ\2025作品\制作展\ActionGame1\Debug\MyDxLibGame3D.exe
-E:\ゆいぜみ\2025作品\制作展\ActionGame1\Debug\MyDxLibGame3D.exe
-D:\ゆいぜみ\2025Production\2025ProductionExhibition\ActionGame1\Debug\MyDxLibGame3D.exe
-D:\Yuizemi\2025Production\2025ProductionExhibition\ActionGame1\Debug\MyDxLibGame3D.exe
-E:\Yuizemi\2025Production\2025ProductionExhibition\ActionGame1\Debug\MyDxLibGame3D.exe
-C:\Users\user\Desktop\バックアップ\RoboAction\ActionGame1\Debug\MyDxLibGame3D.exe
 E:\Yuizemi\2025Production\2025ProductionExhibition\RoboAction\Debug\MyDxLibGame3D.exe
+C:\Users\student\Desktop\RoboAction\Debug\MyDxLibGame3D.exe
+D:\Yuizemi\2025Production\2025ProductionExhibition\RoboAction\Debug\MyDxLibGame3D.exe

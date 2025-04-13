@@ -16,6 +16,8 @@
 #include"UI.h"
 #include"OnAttackedPlayerHit.h"
 #include"OnAttackedEnemyHit.h"
+#include"OnGimmick.h"
+#include"Gimmick.h"
 
 enum STATE
 {
@@ -41,7 +43,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {
 	// 画面モードのセット
 	SetGraphMode(1600, 900, 32);
-	ChangeWindowMode(TRUE);
+	ChangeWindowMode(FALSE);
 
 	// DXライブラリを初期化する。
 	if (DxLib_Init() == -1) return -1;
@@ -75,7 +77,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	// 1秒間に処理するフレーム数を設定(60FPS)
 	const int TARGET_FPS = 60;
 	const int FRAME_TIME = 1000 / TARGET_FPS;  // 1フレームあたりの理想的な時間 (ミリ秒)
-
+	const int GimmickNum = 4;
 	// ********** フォントのロード **********
 	LPCSTR font_path = "Data/Font/LightNovelPOPv2.otf"; // 読み込むフォントファイルのパス
 	//// フォントの変更
@@ -98,6 +100,18 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	hitchecker[1] = new EnemyAttackRangeChecker();
 	OnAttackedPlayer* onattackply = new OnAttackedPlayer();
 	OnAttackedEnemy* onattackedenemy = new OnAttackedEnemy();
+	OnGimmick* ongimmick[GimmickNum];
+	ongimmick[0] = new OnGimmick();
+	ongimmick[1] = new OnGimmick();
+	ongimmick[2] = new OnGimmick();
+	ongimmick[3] = new OnGimmick();
+
+	Gimmick* gimmick[GimmickNum];
+	gimmick[0] = new Gimmick(VGet(-6.0f, 1.0f, -6.0f));
+	gimmick[1] = new Gimmick(VGet(6.0f, 1.0f, -6.0f));
+	gimmick[2] = new Gimmick(VGet(-6.0f, 1.0f, 6.0f));
+	gimmick[3] = new Gimmick(VGet(6.0f, 1.0f, 6.0f));
+
 	// エスケープキーが押されるかウインドウが閉じられるまでループ
 	LONGLONG frameTime = 0;
 
@@ -133,7 +147,11 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				stage->Load();
 				sound->Load();
 				enemy->Load();
-                energy->Load();
+				for (int i = 0; i < GimmickNum; i++)
+				{
+					gimmick[i]->Load();
+				}
+				energy->Load();
 				player->Load();
 				camera->Load();
 				ui->Load();
@@ -149,7 +167,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 			if (gameStatus == STATE_TITLE)
 			{
 				sound->StopTutorial();
-				sound->PlayTitle();
+				//sound->PlayTitle();
 				input->Update();
 				stage->Update();
 				dome->SkydomeUpdate();
@@ -169,7 +187,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 					sound->PlayDecide();
 					gameStatus = STATE_READY;
 				}
-				else if ((input->GetNowFrameInput() & PAD_INPUT_C) != 0 && ui->GetisIsHowToPlay() || CheckHitKey(KEY_INPUT_SPACE) )
+				else if ((input->GetNowFrameInput() & PAD_INPUT_C) != 0 && ui->GetisIsHowToPlay() || CheckHitKey(KEY_INPUT_SPACE))
 				{
 					sound->PlayDecide();
 					gameStatus = STATE_TUTORIAL;
@@ -189,7 +207,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 			if (gameStatus == STATE_TUTORIAL)
 			{
 				sound->StopTitle();
-				sound->PlayTutorial();
+				//sound->PlayTutorial();
 				input->Update();
 				stage->Update();
 				dome->SkydomeUpdate();
@@ -234,26 +252,35 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 			if (gameStatus == STATE_GAME)
 			{
 				sound->StopTitle();
-				sound->PlayGame();
+				//sound->PlayGame();
 				// スカイドーム制御
 				dome->SkydomeUpdate();
 				//ゲームシーンの制御
 				stage->Update();
 				//パッドの制御
 				input->Update();
+				//EnemyAttackRangeChecker test;
+				//const auto enemyattackRangeHitChecker = static_cast<const EnemyAttackRangeChecker*>(hitchecker[1]);
 				//当たり判定制御
+				for (int i = 0; i < GimmickNum; i++)
+				{
+					ongimmick[i]->Update(*player, *gimmick[i]);
+				}
 				for (int i = 0; i < HITCHECK_NUM; i++)
 				{
 					hitchecker[i]->Update(*player, *enemy);
 				}
 				onattackply->Update(*player, *enemy);
 				onattackedenemy->Update(*energy, *enemy, *player);
-				//EnemyAttackRangeChecker test;
-				//const auto enemyattackRangeHitChecker = static_cast<const EnemyAttackRangeChecker*>(hitchecker[1]);
-				enemy->Update(*player, *static_cast<const EnemyAttackRangeChecker*>(hitchecker[1]), *onattackedenemy,*sound);
+				enemy->Update(*player, *static_cast<const EnemyAttackRangeChecker*>(hitchecker[1]), *onattackedenemy, *sound);
+				for (int i = 0; i < GimmickNum; i++)
+				{
+					gimmick[i]->Update(*enemy);
+					player->Update(*input, *onattackply, *ongimmick[i], *camera, *sound);
+				}
 
 				// プレイヤー制御
-				player->Update(*input, *onattackply, *camera,*sound);
+
 
 				energy->Update(*enemy, *player, *onattackedenemy);
 				// カメラの制御
@@ -275,10 +302,15 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				for (int i = 0; i < HITCHECK_NUM; i++)
 				{
 					hitchecker[i]->DrawCircle();
+					ongimmick[i]->DrawCircle();
 				}
 				player->DrawTexture();
 				enemy->DrawTexture();
 				ui->DrawGame(*input);
+				for (int i = 0; i < GimmickNum; i++)
+				{
+					gimmick[i]->Draw();
+				}
 				if (player->GetHp() == 0)
 				{
 					gameStatus = STATE_READYGAMEOVER;

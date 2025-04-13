@@ -73,7 +73,7 @@ void Energy::LimitRange()
 
 void Energy::BallSporn(const Enemy& enemy)
 {
-    if (enemy.GetChaseCount() == 4 )
+    if (enemy.GetChaseCount() == 2 )
     {
 		isDrop = true;
     }

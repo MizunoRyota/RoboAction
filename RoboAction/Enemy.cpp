@@ -50,6 +50,7 @@ Enemy::Enemy()
 	, isCharge(true)
 	, isTurn(false)
 	, tire(false)
+	,isOnAttack(false)
 {
 	//処理なし
 }
@@ -71,13 +72,14 @@ void Enemy::Load()
 	ExplosionSEHandle = LoadSoundMem("data/sound/Explosion.mp3");
 	OnenemyHandle = LoadSoundMem("data/sound/Onenemy.mp3");
 	// エフェクトリソースを読み込む。
-	ExplosionHandle = LoadEffekseerEffect("data/effekseer/EfkFile/Explosion.efkefc", 5.0f);
+	ExplosionHandle = LoadEffekseerEffect("data/effekseer/EfkFile/Explosion.efkefc", 3.0f);
 	BoostDashHandleFhase1 = LoadEffekseerEffect("data/effekseer/EfkFile/BoostDashFhase1.efkefc", 1.0f);
 	BoostDashHandleFhase2 = LoadEffekseerEffect("data/effekseer/EfkFile/BoostDashFhase2.efkefc", 1.0f);
 	BoostDashHandleFhase3 = LoadEffekseerEffect("data/effekseer/EfkFile/BoostDashFhase3.efkefc", 1.0f);
 	BoostDashHandleFhase4 = LoadEffekseerEffect("data/effekseer/EfkFile/BoostDashFhase4.efkefc", 1.0f);
 	BoostDashHandleFhase5 = LoadEffekseerEffect("data/effekseer/EfkFile/BoostDashFhase5.efkefc", 1.0f);
-	TireHandle = LoadEffekseerEffect("data/effekseer/EfkFile/Tire.efkefc", 2.0f);
+	TireHandle = LoadEffekseerEffect("data/effekseer/EfkFile/Explosion2.efkefc", 0.5f);
+	ChargeHandle = LoadEffekseerEffect("data/effekseer/EfkFile/Tire.efkefc", 2.0f);
 
 	//SetScalePlayingEffekseer3DEffect(playingEffectHandle, EffektScale, EffektScale, EffektScale);
 	//SetScalePlayingEffekseer3DEffect(ExplosionHandle, EffektScale, EffektScale, EffektScale);
@@ -89,7 +91,7 @@ void Enemy::Load()
 	isDecreaseHp = false;
 	islimitRange = false;
 	isExplosion = false;
-	isChasing = false;
+	isChasing = true;
 	onAttack = false;
 	isAttack = false;
 	isCharge = true;
@@ -112,51 +114,6 @@ void Enemy::Load()
 	// プレイヤーのモデルの座標を更新する
 	MV1SetPosition(EnemyHandle, position);
 
-}
-
-void Enemy::Initialize()
-{
-	// モデルの読み込み
-	EnemyHandle = MV1LoadModel("data/model/Enemy/robo.mv1");
-	// エフェクトリソースを読み込む。
-	ExplosionHandle = LoadEffekseerEffect("data/effekseer/EfkFile/Explosion.efkefc", 5.0f);
-	BoostDashHandleFhase1 = LoadEffekseerEffect("data/effekseer/EfkFile/BoostDashFhase1.efkefc", 1.0f);
-	BoostDashHandleFhase2 = LoadEffekseerEffect("data/effekseer/EfkFile/BoostDashFhase2.efkefc", 1.0f);
-	BoostDashHandleFhase3 = LoadEffekseerEffect("data/effekseer/EfkFile/BoostDashFhase3.efkefc", 1.0f);
-	BoostDashHandleFhase4 = LoadEffekseerEffect("data/effekseer/EfkFile/BoostDashFhase4.efkefc", 1.0f);
-	BoostDashHandleFhase5 = LoadEffekseerEffect("data/effekseer/EfkFile/BoostDashFhase5.efkefc", 1.0f);
-	TireHandle = LoadEffekseerEffect("data/effekseer/EfkFile/Tire.efkefc", 2.0f);
-	SetScalePlayingEffekseer3DEffect(playingEffectHandle, EffektScale, EffektScale, EffektScale);
-	SetScalePlayingEffekseer3DEffect(ExplosionHandle, EffektScale, EffektScale, EffektScale);
-
-
-	// 3Dモデルのスケール決定
-	MV1SetScale(EnemyHandle, VGet(Scale, Scale, Scale));
-	// プレイヤーのモデルの座標を更新する
-	MV1SetPosition(EnemyHandle, position);
-	hp = 5;
-	position = VGet(0.0f, 0.0f, 10.0f);
-	isShortAttack = false;
-	isDecreaseHp = false;
-	islimitRange = false;
-	isExplosion = false;
-	isChasing = false;
-	onAttack = false;
-	isAttack = false;
-	isCharge = true;
-	isTurn = false;
-	tire = false;
-	attackTimer = 0;
-	tireTimer = 0;
-	chaseCount = 0;
-	currentState = State::TireIdol;
-	prevPlayAnim = -1;
-	playTime = 0;
-	AttachIndex = 0;
-	PlayAnim = -1;
-	AnimTime = 0;
-	time = 0;
-	HpGaugeWidth = 1600;
 }
 
 void Enemy::InitializeAttack()
@@ -269,7 +226,7 @@ void Enemy::RushAttack(const Player& player, const EnemyAttackRangeChecker& atta
 {
 	if (!tire && isAttack && !isCharge&&!islimitRange)
 	{
-		if (chaseCount>=4)
+		if (chaseCount>=2)
 		{
 			isChasing = false;
 			chaseCount = 0;
@@ -319,31 +276,24 @@ void Enemy::DecreaseHp(const OnAttackedEnemy& onAttacked)
 	}
 	else if (hp == 5)
 	{
-		MoveSpeed = 0.25f;
+		MoveSpeed = 0.125f;
 	}
 	if (hp == 4 && HpGaugeWidth >= 1350)
 	{
-		MoveSpeed = 0.30f;
 		HpGaugeWidth -= 2;
 	}
 	else if (hp == 3 && HpGaugeWidth >= 1250)
 	{
-		MoveSpeed = 0.35f;
+		MoveSpeed = 0.20f;
 		HpGaugeWidth -= 2;
 	}
 	else if (hp == 2 && HpGaugeWidth >= 1100)
 	{
-		MoveSpeed = 0.40f;
 		HpGaugeWidth -= 2;
 	}
 	else if (hp == 1 && HpGaugeWidth >= 950)
 	{
-		MoveSpeed = 0.43f;
-		HpGaugeWidth -= 2;
-	}
-	else if (hp == 0 && HpGaugeWidth >= 800)
-	{
-		MoveSpeed = 0.45f;
+		MoveSpeed = 0.30f;
 		HpGaugeWidth -= 2;
 	}
 }
@@ -387,16 +337,26 @@ void Enemy::UpdateEffect(const OnAttackedEnemy& onAttacked)
 			{
 				PlayExplosion();
 				playingEffectHandle = PlayEffekseer3DEffect(ExplosionHandle);
-				isExplosion = false;
 			}
 			else if (tire)
 			{
 				playingEffectHandle = PlayEffekseer3DEffect(TireHandle);
 				SetRotationPlayingEffekseer3DEffect(playingEffectHandle, 0.0f, angle + DX_PI_F, 90.0f);
 			}
+			else if (isCharge)
+			{
+				playingEffectHandle = PlayEffekseer3DEffect(ChargeHandle);
+			}
 		}
-		SetRotationPlayingEffekseer3DEffect(playingEffectHandle, 0.0f, angle + DX_PI_F, 0.0);
+
 		SetPosPlayingEffekseer3DEffect(playingEffectHandle, position.x, position.y + 3.0f, position.z);
+
+		if (tire&&!isExplosion)
+		{
+			SetPosPlayingEffekseer3DEffect(playingEffectHandle, position.x, position.y - 2.0f, position.z);
+		}
+
+		SetRotationPlayingEffekseer3DEffect(playingEffectHandle, 0.0f, angle + DX_PI_F, 0.0);
 
 		// 時間を経過させる。
 		time++;
@@ -419,23 +379,27 @@ void Enemy::Update(const Player& player, const EnemyAttackRangeChecker& attackRa
 
 	//if (CheckHitKey(KEY_INPUT_R))
 	//{
-		clsDx();
-		printfDx("xpos%f\n", position.x);
-		printfDx("ypos%f\n", position.y);
-		printfDx("zpos%f\n", position.z);
-		printfDx("hp%d\n", hp);
-		printfDx("currentState%d\n", currentState);
-		printfDx("prevState%d\n", prevState);
-		printfDx("PlayAnim%d\n", PlayAnim);
-		printfDx("isAttack%d\n", isAttack);
-		printfDx("isTurn%d\n", isTurn);
-		printfDx("limitRange%d\n", islimitRange);
-		printfDx("ChaseCount%d\n", chaseCount);
-		printfDx("isShortAttack%d\n", isShortAttack);
+		//clsDx();
+		//printfDx("xpos%f\n", position.x);
+		//printfDx("ypos%f\n", position.y);
+		//printfDx("zpos%f\n", position.z);
+		//printfDx("hp%d\n", hp);
+		//printfDx("currentState%d\n", currentState);
+		//printfDx("prevState%d\n", prevState);
+		//printfDx("PlayAnim%d\n", PlayAnim);
+		//printfDx("isAttack%d\n", isAttack);
+		//printfDx("tire%d\n", tire);
+		//printfDx("limitRange%d\n", islimitRange);
+		//printfDx("ChaseCount%d\n", chaseCount);
+		//printfDx("isExplosion%d\n", isExplosion);
 	//}
 	if (CheckHitKey(KEY_INPUT_T))
 	{
-		hp = 0;
+		hp = 3;
+	}
+	if (CheckHitKey(KEY_INPUT_Y))
+	{
+		hp = 1;
 	}
 	//現在のアニメーションの状態更新処理
 	currentState = UpdateEnemyState(attackRange,onAttacked);
@@ -453,6 +417,7 @@ void Enemy::Update(const Player& player, const EnemyAttackRangeChecker& attackRa
 	UpdateEffect(onAttacked);
 
 	DecreaseHp(onAttacked);
+
 	//Enemyの影の更新
 	UpdateShadow();
 	//アニメーション更新
@@ -508,6 +473,7 @@ Enemy::State Enemy::UpdateEnemyState(const EnemyAttackRangeChecker& attackRange,
 		{
 			// 状態を「走り」にする
 			nextState = State::Charge;
+
 		}
 	}
 	//攻撃中の時に待機状態にする
@@ -579,7 +545,14 @@ void Enemy::UpdateAnimation()
 		animTotalTime = MV1GetAttachAnimTotalTime(EnemyHandle, PlayAnim);
 
 		//アニメーションを進める
-		playTime += playAnimSpeed;
+		if (currentState == State::Charge)
+		{
+			playTime += ChargeAnimSpeed;
+		}
+		else
+		{
+			playTime += playAnimSpeed;
+		}
 
 		// 再生時間がアニメーションの総再生時間に達したら再生時間を０に戻す
 		if (playTime >= animTotalTime)
@@ -646,7 +619,7 @@ void Enemy::UpdateAnimationState(State prevState)
 		ChangeMotion(AnimKind::Trun);
 	}
 	//
-	if (prevState == State::Run && currentState == State::TireIdol)
+	if (prevState == State::Run && currentState == State::TireIdol&&!onAttack)
 	{
 		ChangeMotion(AnimKind::TireIdol);
 	}
@@ -654,7 +627,7 @@ void Enemy::UpdateAnimationState(State prevState)
 	{
 		ChangeMotion(AnimKind::Explosion);
 	}
-	if (prevState == State::TireIdol && currentState == State::OnAttack)
+	if (prevState == State::TireIdol && currentState == State::OnAttack&&prevState != State::OnAttack&&!onAttack)
 	{
 		ChangeMotion(AnimKind::OnAttack);
 	}

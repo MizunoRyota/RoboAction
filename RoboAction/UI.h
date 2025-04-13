@@ -19,22 +19,22 @@ public:
 	const bool& GetisIsHowToPlay() const { return HowToPlay; }
 
 private:
-	int AHandle;
-	int FalseAHandle;
-	int BHandle;
-	int FalseBHandle;
-	int XHandle;
-	int FalseXHandle;
-	int YHandle;
-	int FalseYHandle;
-	int WantedHandle;
-	int PlayTitleHandle;
-	int HowToPlayTitleHandle;
-	int TutorialHandle;
-	bool ChosePlay;
-	bool HowToPlay;
-	int GameOverHandle;
-	int GameClearHandle;
-	int LessonHandle;
+	int AHandle;				//Aボタンの画像
+	int FalseAHandle;			//Aボタンを押していないときの画像
+	int BHandle;				//
+	int FalseBHandle;			//
+	int XHandle;				//
+	int FalseXHandle;			//
+	int YHandle;				//
+	int FalseYHandle;			//
+	int WantedHandle;			//
+	int PlayTitleHandle;		//ゲームを始めるを洗濯時の画像
+	int HowToPlayTitleHandle;	//遊び方洗濯時の画像
+	int TutorialHandle;			//チュートリアル画像
+	bool ChosePlay;				//
+	bool HowToPlay;				//
+	int GameOverHandle;			//ゲームオーバー画像
+	int GameClearHandle;		//ゲームクリア画像
+	int LessonHandle;			//敵の倒し方の画像
 };
 

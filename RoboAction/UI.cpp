@@ -47,13 +47,13 @@ void UI::Load()
 	GameOverHandle = LoadGraph("data/Ui/Texture/GameOver2.png");
 	TutorialHandle = LoadGraph("data/Ui/Texture/Tutorial2.png");
 	GameClearHandle = LoadGraph("data/Ui/Texture/GameClear2.png");
-	LessonHandle = LoadGraph("data/Ui/Texture/Lesson2.png");
+	LessonHandle = LoadGraph("data/Ui/Texture/Lessen4.png");
+
 
 }
 
 void UI::UpdateTitle(Input& input)
 {
-
 	if (input.GetNowFrameInput() & PAD_INPUT_RIGHT)
 	{
 		HowToPlay = true;
@@ -64,7 +64,6 @@ void UI::UpdateTitle(Input& input)
 		HowToPlay = false;
 		ChosePlay = true;
 	}
-
 }
 
 void UI::DrawTitle()
